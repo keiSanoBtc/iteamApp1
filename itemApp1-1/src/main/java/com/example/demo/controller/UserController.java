@@ -16,13 +16,13 @@ import com.example.demo.service.UserService;
 @Controller
 public class UserController {
 
-	 @Autowired
-	 UserService userService;
+	@Autowired
+	UserService userService;
 
     @RequestMapping(value = "/user", method = RequestMethod.POST)
     public String userPlanBookList(@ModelAttribute UserSearchRequest userSearchRequest, Model model) {
     	List<Book> userPlanBookList = userService.userPlanBookList(userSearchRequest);
-        model.addAttribute("planBookList", userPlanBookList);
+        model.addAttribute("userPlanBookList", userPlanBookList);
         return "user";
     }
 }
