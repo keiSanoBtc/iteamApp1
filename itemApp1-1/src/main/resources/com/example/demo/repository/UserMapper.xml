@@ -4,10 +4,15 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.repository.UserMapper">
     <select id="userPlanBookList" resultType="com.example.demo.entity.Book">
-        SELECT b.READ_NAME
-        	FROM USER_TABLE a INNER JOIN BOOK_PLAN_TABLE2 b ON b.USER_ID = a.USER_ID
-        		WHERE b.USER_ID = #{user_id}
-        		AND b.READ_FLAG = 0
-        	ORDER BY b.BOOK_RECORD_NO ;
+
     </select>
+    <select id="userPastBookList" resultType="com.example.demo.entity.Book">
+
+    </select>
+    <delete id="deletePlanBook">
+
+    </delete>
+    <update id="postBook">
+
+    </update>
 </mapper>

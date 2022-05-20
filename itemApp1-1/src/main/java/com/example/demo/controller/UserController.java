@@ -19,10 +19,29 @@ public class UserController {
 	@Autowired
 	UserService userService;
 
+//	読みたい本リストと
     @RequestMapping(value = "/user", method = RequestMethod.POST)
     public String userPlanBookList(@ModelAttribute UserSearchRequest userSearchRequest, Model model) {
     	List<Book> userPlanBookList = userService.userPlanBookList(userSearchRequest);
+//    	読んだ本リスト
         model.addAttribute("userPlanBookList", userPlanBookList);
+//        アトリビュート２
         return "user";
+    }
+
+//  読みたい本の削除
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public String deletePlanBook(@ModelAttribute UserSearchRequest userSearchRequest, Model model) {
+    	userService.deletePlanBook(userSearchRequest);
+        model.addAttribute("message", "deleteしました。");
+        return "deleted_confirm";
+    }
+
+//  読みたい本を既読する
+    @RequestMapping(value = "/postbook", method = RequestMethod.POST)
+    public String postBook(@ModelAttribute UserSearchRequest userSearchRequest, Model model) {
+    	userService.postBook(userSearchRequest);
+        model.addAttribute("message", "deleteしました。");
+        return "postbook_confirm";
     }
 }

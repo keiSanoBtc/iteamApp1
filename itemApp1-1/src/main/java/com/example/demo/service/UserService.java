@@ -19,4 +19,12 @@ public class UserService {
     public List<Book> userPlanBookList(UserSearchRequest userSearchRequest) {
         return userMapper.userPlanBookList(userSearchRequest);
     }
+
+    public void deletePlanBook(UserSearchRequest userSearchRequest) {
+        userMapper.deletePlanBook(userSearchRequest);
+    }
+
+    public void postBook(UserSearchRequest userSearchRequest) {
+        userMapper.postBook(userSearchRequest);
+    }
 }

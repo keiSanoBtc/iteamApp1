@@ -11,6 +11,13 @@ import com.example.demo.entity.Book;
 
 @Mapper
 public interface UserMapper {
+
     List<Book> userPlanBookList(UserSearchRequest user);
+
+    List<Book> userPastBookList(UserSearchRequest user);
+
+    void deletePlanBook(UserSearchRequest user);
+
+    void postBook(UserSearchRequest user);
 
 }
