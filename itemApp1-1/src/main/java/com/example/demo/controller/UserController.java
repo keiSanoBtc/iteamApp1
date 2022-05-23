@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.demo.dto.UserSearchRequest;
-import com.example.demo.entity.Book;
 import com.example.demo.entity.User;
 import com.example.demo.service.UserService;
 
@@ -22,15 +21,28 @@ public class UserController {
 	@Autowired
 	UserService userService;
 
-//	読みたい本リストと
-    @RequestMapping(value = "/user", method = RequestMethod.POST)
-    public String userPlanBookList(@ModelAttribute UserSearchRequest userSearchRequest, Model model){
-    	List<Book> userPlanBookList = userService.userPlanBookList(userSearchRequest);
-//    	読んだ本リスト
-        model.addAttribute("userPlanBookList", userPlanBookList);
-//        アトリビュート２
-        return "user";
-    }
+//	 最初の画面
+	 @RequestMapping(value = "/index", method = RequestMethod.GET)
+	 public String index(Model model) {
+		 return "index";
+	 }
+
+//	 利用者ごとのページを表示
+	 @RequestMapping(value = "/usersearch", method = RequestMethod.POST)
+	 public String userSearch(@ModelAttribute UserSearchRequest userSearchRequest, Model model){
+//		 ユーザー、これから読む本のリスト、読んだ本リスト
+//		 アトリビュート
+	     return "user";
+	 }
+
+//	 本棚を表示
+	 @RequestMapping(value = "/bookshelf", method = RequestMethod.POST)
+	 public String bookShelf(@ModelAttribute UserSearchRequest userSearchRequest, Model model) {
+//		 ユーザー、本のリスト
+//		 アトリビュート
+		return "bookshelf";
+	 }
+
 
 //  読みたい本の削除
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
