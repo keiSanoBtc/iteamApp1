@@ -9,7 +9,7 @@
 <body>
     <!-- header -->
     <header>
-        <h1 class="header_title">usernameの積読リスト</h1>
+        <h1 class="header_title" th:object="${user}"><span th:text="*{name}"></span>の積読リスト</h1>
     </header>
     <!-- header -->
 
@@ -30,8 +30,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr th:each="user : ${userList}" th:object="${userList}">
-                                <td th:text="${user.name}"></td>
+                            <tr th:each="book : ${userPlanBookList}">
+                                <td th:text="${book.book_name}"></td>
                             </tr>
                         </tbody>
                     </table>

@@ -24,6 +24,11 @@
         <div>
             <button>検索</button>
         </div>
+        <form th:action="@{/user}" th:object="${userSearchRequest}"
+	        th:method="post">
+	            ID：<input type="text" name="name" />
+	            <input type="submit" value="検索" />
+   		</form>
     </main>
     <!-- main -->
 

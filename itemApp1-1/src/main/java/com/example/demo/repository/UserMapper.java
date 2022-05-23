@@ -6,11 +6,13 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.example.demo.dto.UserSearchRequest;
 import com.example.demo.entity.Book;
-
+import com.example.demo.entity.User;
 
 
 @Mapper
 public interface UserMapper {
+
+	User userSearch(UserSearchRequest user);
 
     List<Book> userPlanBookList(UserSearchRequest user);
 
