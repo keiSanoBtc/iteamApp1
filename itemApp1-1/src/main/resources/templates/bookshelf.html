@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +8,35 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <!-- header -->
+    <header>
+        <h1 class="header_title">積読リスト</h1>
+    </header>
+    <!-- header -->
+
+    <!-- main -->
+    <main>
+        <h1>ユーザー情報一覧</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>本の題名</th>
+                    <th>本の題名を編集する</th>
+                    <th>読みたい本リストに追加</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 未編集 -->
+                <tr th:each="user : ${userList}" th:object="${userList}">
+                    <td th:text="${user.name}"></td>
+                <!-- 未編集 -->
+                    <td><button>編集</button></td>
+                    <td><button>追加</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <!-- main -->
+
 </body>
 </html>

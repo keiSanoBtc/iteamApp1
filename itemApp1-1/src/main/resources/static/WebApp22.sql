@@ -36,7 +36,7 @@ CREATE TABLE BOOK_PLAN_TABLE (
   USER_ID           INT(9)           NOT NULL    COMMENT '利用者ID',
   BOOK_ID           INT(9)           NOT NULL    COMMENT '本ID',
   READ_FLAG         INT(1)           DEFAULT 0   COMMENT '既読フラグ',
-  DELETE_FLAG       INT(1)           DEFAULT 0   COMMENT '削除フラグ'
+  DELETE_FLAG       INT(1)           DEFAULT 0   COMMENT '削除フラグ',
   PRIMARY KEY(USER_ID, BOOK_ID)                 
 );
 
@@ -94,10 +94,10 @@ ORDER BY b.BOOK_ID ;
   
 #読みたい本の削除
 UPDATE BOOK_PLAN_TABLE
-SET READ_FLAG = 1
+SET DELETE_FLAG = 1
 WHERE USER_ID = 1
   AND BOOK_ID = 2
-  AND READ_FLAG = 0 ;
+  AND DELETE_FLAG = 0 ;
 
 
 #読みたい本の既読
