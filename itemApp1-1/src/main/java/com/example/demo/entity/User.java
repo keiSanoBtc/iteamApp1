@@ -1,11 +1,13 @@
 package com.example.demo.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
+@AllArgsConstructor
 @Data
 public class User {
 
-    private Long id;
+    public Long id;
 
-    private String name;
+    public String name;
 }

@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +9,28 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <!-- header -->
+    <header>
+        <h1 class="header_title">積読リスト</h1>
+    </header>
+    <!-- header -->
+
+    <!-- main -->
+    <main>
+        <div>
+            <p>ユーザー名</p>
+            <!-- ここにユーザー名を選択するドロップダウンリストを挿入します -->
+        </div>
+        <div>
+            <button>検索</button>
+        </div>
+        <form th:action="@{/user}" th:object="${userSearchRequest}"
+	        th:method="post">
+	            ID：<input type="text" name="name" />
+	            <input type="submit" value="検索" />
+   		</form>
+    </main>
+    <!-- main -->
+
 </body>
 </html>

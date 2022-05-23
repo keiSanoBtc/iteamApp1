@@ -1,12 +1,25 @@
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ユーザー情報一覧</title>
 </head>
 <body>
-    
+    <h1>ユーザー情報一覧</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>名前</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user : ${userList}" th:object="${userList}">
+                <td th:text="${user.name}"></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>

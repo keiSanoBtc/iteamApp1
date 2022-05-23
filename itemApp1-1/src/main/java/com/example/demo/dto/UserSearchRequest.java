@@ -9,4 +9,6 @@ public class UserSearchRequest implements Serializable {
 
   public String name;
 
+  public Long id;
+
 }

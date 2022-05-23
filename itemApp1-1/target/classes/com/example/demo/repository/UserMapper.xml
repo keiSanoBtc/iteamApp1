@@ -4,6 +4,15 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.repository.UserMapper">
     <select id="userPlanBookList" resultType="com.example.demo.entity.Book">
-        SELECT * FROM user WHERE id = #{id}
+
     </select>
+    <select id="userPastBookList" resultType="com.example.demo.entity.Book">
+
+    </select>
+    <delete id="deletePlanBook">
+
+    </delete>
+    <update id="postBook">
+
+    </update>
 </mapper>

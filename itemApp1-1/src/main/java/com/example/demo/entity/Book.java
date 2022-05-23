@@ -1,13 +1,14 @@
 package com.example.demo.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
+@AllArgsConstructor
 @Data
 public class Book {
 
-    private Long user_id;
+	public Long id;
 
-    private Long book_id;
+    public String book_name;
 
-    private String book_name;
 }
