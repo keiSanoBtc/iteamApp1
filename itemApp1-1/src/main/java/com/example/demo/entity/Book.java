@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class Book {
 
-    private String book_name;
-    
+    public String book_name;
+
 }
