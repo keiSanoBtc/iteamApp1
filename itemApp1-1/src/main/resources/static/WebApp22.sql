@@ -36,7 +36,7 @@ CREATE TABLE BOOK_PLAN_TABLE (
   USER_ID           INT(9)           NOT NULL    COMMENT '利用者ID',
   BOOK_ID           INT(9)           NOT NULL    COMMENT '本ID',
   READ_FLAG         INT(1)           DEFAULT 0   COMMENT '既読フラグ',
-  DELETE_FLAG       INT(1)           DEFAULT 0   COMMENT '削除フラグ'
+  DELETE_FLAG       INT(1)           DEFAULT 0   COMMENT '削除フラグ',
   PRIMARY KEY(USER_ID, BOOK_ID)                 
 );
 
