@@ -26,9 +26,9 @@ public class UserController {
 	 public String index(Model model) {
 		 return "index";
 	 }
-	 @RequestMapping(value="/usersearch", method=RequestMethod.GET)
+	 @RequestMapping(value="/userSearch", method=RequestMethod.GET)
 	 public String userSearch(Model model) {
-		 return "usersearch";
+		 return "userSearch";
 	 }
 
 //	 利用者ごとのページを表示
@@ -74,7 +74,7 @@ public class UserController {
     }
 
 //  ユーザ一覧を表示（テスト）
-    @RequestMapping(value = "/userlist", method = RequestMethod.GET)
+    @RequestMapping(value = "/userList", method = RequestMethod.GET)
     public String userList(Model model) {
     	List<User> userList = new ArrayList<User>();
     	User user1 = new User();
