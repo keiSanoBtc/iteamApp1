@@ -26,12 +26,17 @@ public class UserController {
 	 public String index(Model model) {
 		 return "index";
 	 }
+	 @RequestMapping(value="/usersearch", method=RequestMethod.GET)
+	 public String userSearch(Model model) {
+		 return "usersearch";
+	 }
 
 //	 利用者ごとのページを表示
-	 @RequestMapping(value = "/usersearch", method = RequestMethod.POST)
+	 @RequestMapping(value = "/user", method = RequestMethod.POST)
 	 public String userSearch(@ModelAttribute UserSearchRequest userSearchRequest, Model model){
 //		 ユーザー、これから読む本のリスト、読んだ本リスト
 //		 アトリビュート
+		 model.addAttribute("username", userSearchRequest.name);
 	     return "user";
 	 }
 
@@ -44,22 +49,31 @@ public class UserController {
 	 }
 
 
+//  読みたい本の編集
+	 @RequestMapping(value = "/edit", method = RequestMethod.POST)
+	 public String editPlanBook(@ModelAttribute UserSearchRequest userSearchRequest, Model model) {
+		 String userName = userSearchRequest.name;
+		 Long userId = userSearchRequest.id;
+		 return "edit";
+	    }
+
 //  読みたい本の削除
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public String deletePlanBook(@ModelAttribute UserSearchRequest userSearchRequest, Model model) {
     	userService.deletePlanBook(userSearchRequest);
-        model.addAttribute("message", "deleteしました。");
-        return "deleted_confirm";
+        model.addAttribute("deleteMessage", "deleteしました。");
+        return "deletedComplete";
     }
 
 //  読みたい本を既読する
-    @RequestMapping(value = "/postbook", method = RequestMethod.POST)
+    @RequestMapping(value = "/kidokuComplete", method = RequestMethod.POST)
     public String postBook(@ModelAttribute UserSearchRequest userSearchRequest, Model model) {
     	userService.postBook(userSearchRequest);
         model.addAttribute("message", "deleteしました。");
-        return "postbook_confirm";
+        return "kidokuComplete";
     }
 
+//  ユーザ一覧を表示（テスト）
     @RequestMapping(value = "/userlist", method = RequestMethod.GET)
     public String userList(Model model) {
     	List<User> userList = new ArrayList<User>();
