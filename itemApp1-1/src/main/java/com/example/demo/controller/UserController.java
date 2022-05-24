@@ -35,10 +35,13 @@ public class UserController {
 	 @RequestMapping(value = "/user", method = RequestMethod.POST)
 	 public String userSearch(@ModelAttribute UserSearchRequest userSearchRequest, Model model){
 		 List<Book> userPlanBookList = userService.userPlanBookList(userSearchRequest);
+		 List<Book> userPastBookList = userService.userPastBookList(userSearchRequest);
 		 User user = userService.userSearch(userSearchRequest);
 		 System.out.println(userSearchRequest.name);
 		 System.out.println(userPlanBookList);
+		 System.out.println(userPastBookList);
 		 model.addAttribute("user", user);
+		 model.addAttribute("userPastBookList", userPastBookList);
 		 model.addAttribute("userPlanBookList", userPlanBookList);
 	     return "user";
 	 }
