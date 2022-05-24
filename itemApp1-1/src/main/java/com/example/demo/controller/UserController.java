@@ -34,23 +34,16 @@ public class UserController {
 //	 利用者ごとのページを表示
 	 @RequestMapping(value = "/user", method = RequestMethod.POST)
 	 public String userSearch(@ModelAttribute UserSearchRequest userSearchRequest, Model model){
+//		 System.out.println(userSearchRequest);
 		 List<Book> userPlanBookList = userService.userPlanBookList(userSearchRequest);
 		 User user = userService.userSearch(userSearchRequest);
-		 System.out.println(userSearchRequest.name);
-		 System.out.println(userPlanBookList);
+//		 System.out.println(userSearchRequest.name);
+//		 System.out.println(user);
+//		 System.out.println(userPlanBookList);
 		 model.addAttribute("user", user);
 		 model.addAttribute("userPlanBookList", userPlanBookList);
 	     return "user";
 	 }
-
-//	 本棚を表示
-	 @RequestMapping(value = "/bookshelf", method = RequestMethod.POST)
-	 public String bookShelf(@ModelAttribute UserSearchRequest userSearchRequest, Model model) {
-//		 ユーザー、本のリスト
-//		 アトリビュート
-		return "bookshelf";
-	 }
-
 
 //  読みたい本の編集
 	 @RequestMapping(value = "/edit", method = RequestMethod.POST)

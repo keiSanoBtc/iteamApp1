@@ -27,10 +27,10 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- 未編集 -->
-                <tr th:each="user : ${userList}" th:object="${userList}">
-                    <td th:text="${user.name}"></td>
-                <!-- 未編集 -->
+                <!-- 編集中 -->
+                <tbody th:each="book : ${allBookList}">
+                    <td th:text="${book.book_name}"></td>
+                <!-- 編集中 -->
                     <td><button onclick="location.href='edit'">編集</button></td>
                     <td><button>追加</button></td>
                 </tr>
