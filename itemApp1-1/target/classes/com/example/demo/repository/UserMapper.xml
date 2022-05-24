@@ -7,7 +7,7 @@
 		SELECT * FROM USER_TABLE WHERE USER_NAME = #{name};
     </select>
     <select id="userPlanBookList" resultType="com.example.demo.entity.Book">
-    	SELECT c.BOOK_ID, c.BOOK_TITLE
+    	SELECT c.BOOK_ID , b.BOOK_TITLE
 		  FROM (USER_TABLE a INNER JOIN BOOK_PLAN_TABLE b ON b.USER_ID = a.USER_ID)
 		                     INNER JOIN BOOK_TABLE c ON b.BOOK_ID = c.BOOK_ID
 		  WHERE a.USER_NAME = #{name}
