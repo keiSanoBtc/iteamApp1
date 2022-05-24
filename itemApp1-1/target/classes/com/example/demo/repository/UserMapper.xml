@@ -16,12 +16,38 @@
 		 ORDER BY b.BOOK_ID ;
     </select>
     <select id="userPastBookList" resultType="com.example.demo.entity.Book">
-
+    	SELECT c.BOOK_ID , b.BOOK_TITLE
+		  FROM (USER_TABLE a INNER JOIN BOOK_PLAN_TABLE b ON b.USER_ID = a.USER_ID)
+		                     INNER JOIN BOOK_TABLE c ON b.BOOK_ID = c.BOOK_ID
+		  WHERE a.USER_NAME = #{name}
+		  AND b.READ_FLAG = 1
+		  AND b.DELETE_FLAG = 0
+		 ORDER BY b.BOOK_ID ;
     </select>
-    <delete id="deletePlanBook">
-
-    </delete>
+    <select id="userPlanBookEdit" resultType="com.example.demo.entity.UserPlanBook">
+    	SELECT USER_ID, BOOK_ID, BOOK_TITLE
+			FROM BOOK_PLAN_TABLE
+			WHERE USER_ID = #{user_id}
+			  AND BOOK_ID = #{book_id};
+    </select>
+    <update id="userPlanBookEditComplete">
+    	UPDATE BOOK_PLAN_TABLE
+			SET BOOK_TITLE = #{book_name}
+			WHERE USER_ID = #{user_id}
+			  AND BOOK_ID = #{book_id};
+    </update>
+    <update id="deletePlanBook">
+    	UPDATE BOOK_PLAN_TABLE
+			SET DELETE_FLAG = 1
+			WHERE USER_ID = #{user_id}
+			  AND BOOK_ID = #{book_id}
+			  AND DELETE_FLAG = 0 ;
+    </update>
     <update id="postBook">
-
+    	UPDATE BOOK_PLAN_TABLE
+			SET READ_FLAG = 1
+			WHERE USER_ID = #{user_id}
+			  AND BOOK_ID = #{book_id}
+			  AND READ_FLAG = 0 ;
     </update>
 </mapper>

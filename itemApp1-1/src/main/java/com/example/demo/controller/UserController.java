@@ -9,9 +9,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.example.demo.dto.UserPlanBookEditRequest;
+import com.example.demo.dto.UserPlanBookRequest;
 import com.example.demo.dto.UserSearchRequest;
 import com.example.demo.entity.Book;
 import com.example.demo.entity.User;
+import com.example.demo.entity.UserPlanBook;
 import com.example.demo.service.UserService;
 
 
@@ -36,36 +39,51 @@ public class UserController {
 	 public String userSearch(@ModelAttribute UserSearchRequest userSearchRequest, Model model){
 //		 System.out.println(userSearchRequest);
 		 List<Book> userPlanBookList = userService.userPlanBookList(userSearchRequest);
+		 List<Book> userPastBookList = userService.userPastBookList(userSearchRequest);
 		 User user = userService.userSearch(userSearchRequest);
-//		 System.out.println(userSearchRequest.name);
-//		 System.out.println(user);
-//		 System.out.println(userPlanBookList);
+		 System.out.println(userSearchRequest.name);
+		 System.out.println(userPlanBookList);
+		 System.out.println(userPastBookList);
 		 model.addAttribute("user", user);
+		 model.addAttribute("userPastBookList", userPastBookList);
 		 model.addAttribute("userPlanBookList", userPlanBookList);
 	     return "user";
 	 }
 
 //  読みたい本の編集
 	 @RequestMapping(value = "/edit", method = RequestMethod.POST)
-	 public String editPlanBook(@ModelAttribute UserSearchRequest userSearchRequest, Model model) {
-		 String userName = userSearchRequest.name;
-		 Long userId = userSearchRequest.id;
+	 public String editPlanBook(@ModelAttribute UserPlanBookRequest userPlanBookRequest, Model model) {
+		 UserPlanBook userPlanBook = userService.userPlanBookEdit(userPlanBookRequest);
+		 model.addAttribute("userPlanBook", userPlanBook);
 		 return "edit";
 	    }
 
+
+//  読みたい本の編集完了
+	@RequestMapping(value = "/editComplete", method = RequestMethod.POST)
+	 public String editPlanBookComplete(@ModelAttribute UserPlanBookEditRequest userPlanBookEditRequest, Model model) {
+		userService.userPlanBookEditComplete(userPlanBookEditRequest);
+		return "editComplete";
+	}
+
+
 //  読みたい本の削除
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
-    public String deletePlanBook(@ModelAttribute UserSearchRequest userSearchRequest, Model model) {
-    	userService.deletePlanBook(userSearchRequest);
-        model.addAttribute("deleteMessage", "deleteしました。");
-        return "deletedComplete";
+    public String deletePlanBook(@ModelAttribute UserPlanBookRequest userPlanBookRequest, Model model) {
+    	userService.deletePlanBook(userPlanBookRequest);
+    	System.out.println(userPlanBookRequest.user_id);
+    	System.out.println(userPlanBookRequest.book_id);
+        model.addAttribute("deleteMessage", "削除しました。");
+        return "deleteComplete";
     }
 
 //  読みたい本を既読する
     @RequestMapping(value = "/kidokuComplete", method = RequestMethod.POST)
-    public String postBook(@ModelAttribute UserSearchRequest userSearchRequest, Model model) {
-    	userService.postBook(userSearchRequest);
-        model.addAttribute("message", "deleteしました。");
+    public String postBook(@ModelAttribute UserPlanBookRequest userPlanBookRequest, Model model) {
+    	userService.postBook(userPlanBookRequest);
+    	System.out.println(userPlanBookRequest.user_id);
+    	System.out.println(userPlanBookRequest.book_id);
+        model.addAttribute("message", "既読しました。");
         return "kidokuComplete";
     }
 

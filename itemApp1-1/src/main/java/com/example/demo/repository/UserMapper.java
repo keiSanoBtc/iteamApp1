@@ -4,9 +4,12 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.example.demo.dto.UserPlanBookEditRequest;
+import com.example.demo.dto.UserPlanBookRequest;
 import com.example.demo.dto.UserSearchRequest;
 import com.example.demo.entity.Book;
 import com.example.demo.entity.User;
+import com.example.demo.entity.UserPlanBook;
 
 
 @Mapper
@@ -18,8 +21,12 @@ public interface UserMapper {
 
     List<Book> userPastBookList(UserSearchRequest user);
 
-    void deletePlanBook(UserSearchRequest user);
+    UserPlanBook userPlanBookEdit(UserPlanBookRequest user);
 
-    void postBook(UserSearchRequest user);
+    void userPlanBookEditComplete(UserPlanBookEditRequest user);
+
+    void deletePlanBook(UserPlanBookRequest user);
+
+    void postBook(UserPlanBookRequest user);
 
 }
