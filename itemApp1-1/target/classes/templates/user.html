@@ -9,11 +9,7 @@
 <body>
     <!-- header -->
     <header>
-<<<<<<< HEAD
-        <h1 class="header">usernameの積読リスト</h1>
-=======
-        <h1 class="header_title">usernameの積読リスト</h1>
->>>>>>> 2e448e6c80202f6e7dec66cabd3db041bc51ca08
+        <h1 class="header_title" th:object="${user}"><span th:text="*{name}"></span>の積読リスト</h1>
     </header>
     <!-- header -->
 
@@ -22,13 +18,6 @@
         <!-- 読みたい本リスト -->
         <div class="yomitai_wrapper">
             <div class="yomitai_title">
-<<<<<<< HEAD
-                <h2>読みたい本リスト</h2>
-                <button>追加</button>
-            </div>
-            <div class="yomitai_list">
-                <!-- to Springチーム：ここに読みたい本リストを挿入してください -->
-=======
                 <button>本棚</button>
             </div>
             <div class="yomitai_list">
@@ -41,13 +30,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr th:each="user : ${userList}" th:object="${userList}">
-                                <td th:text="${user.name}"></td>
+                            <tr th:each="book : ${userPlanBookList}">
+                                <td th:text="${book.book_name}"></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
->>>>>>> 2e448e6c80202f6e7dec66cabd3db041bc51ca08
             </div>
         </div>
         <!-- 読みたい本リスト -->
@@ -58,11 +46,20 @@
                 <h2>読んだ本リスト</h2>
             </div>
             <div class="kidoku_list">
-<<<<<<< HEAD
-                <!-- to Springチーム：ここに読んだ本リストを挿入してください -->
-=======
                 <!-- to Springチーム：ここに読んだ本リストを挿入してください  -->
->>>>>>> 2e448e6c80202f6e7dec66cabd3db041bc51ca08
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="book : ${userPastBookList}">
+                                <td th:text="${book.book_name}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         <!-- 読んだ本リスト -->
@@ -71,11 +68,7 @@
     <!-- main -->
 
     <script>
-<<<<<<< HEAD
-        <!-- JavaScriptを記述する -->
-=======
         // JavaScriptを記述する
->>>>>>> 2e448e6c80202f6e7dec66cabd3db041bc51ca08
     </script>
 
 </body>
