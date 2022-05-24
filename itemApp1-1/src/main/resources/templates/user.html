@@ -9,7 +9,7 @@
 <body>
     <!-- header -->
     <header>
-        <h1 class="header_title" th:object="${user}"><span th:text="*{name}"></span>の積読リスト</h1>
+       <!-- <h1 class="header_title" th:object="${user}"><span th:text="*{name}"></span>の積読リスト</h1> -->
     </header>
     <!-- header -->
 
@@ -18,7 +18,7 @@
         <!-- 読みたい本リスト -->
         <div class="yomitai_wrapper">
             <div class="yomitai_title">
-                <button>本棚</button>
+                <button onclick="location.href='bookshelf'">本棚</button>
             </div>
             <div class="yomitai_list">
                 <!-- to Springチーム：ここに読みたい本リストを挿入 -->
