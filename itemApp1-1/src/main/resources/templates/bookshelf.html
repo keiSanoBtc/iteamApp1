@@ -22,16 +22,23 @@
             <thead>
                 <tr>
                     <th class="display-1">本の題名</th>
-                    <th>本の題名を編集する</th>
                     <th>読みたい本リストに追加</th>
                 </tr>
             </thead>
             <!-- 編集中 -->
-            <tbody th:each="book : ${allBookList}">
+            <tbody th:each="book : ${myNotReadBookList}">
             	<tr>
                     <td th:text="${book.book_name}"></td>
-                    <td><button onclick="location.href='edit'">編集</button></td>
-                    <td><button>追加</button></td>
+                    <td>
+				    	<form th:action="@{/addPlanBook}" th:object="${BookUserEditRequest}" th:method="post">
+							<div>
+								<input type="hidden" th:object="${user}" name="user_id" th:value="*{id}" />
+								<input type="hidden"  name="book_id" th:value="${book.id}" />
+								<input type="hidden"  name="book_name" th:value="${book.book_name}" />
+								<input type="submit" value="追加"  />
+							</div>
+						</form>
+				    </td>
                 </tr>
             </tbody>
             <!-- 編集中 -->
