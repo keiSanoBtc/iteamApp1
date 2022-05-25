@@ -17,7 +17,7 @@
     </div>
 
     <table>
-    
+
     <!-- 編集中 -->
     <tbody>
     	<tbody th:each="book : ${allBookList}">
@@ -33,7 +33,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr th:each="user : ${userList}" th:object="${userList}">
+            <tr th:each="user : ${allUserList}" th:object="${userList}">
                 <td th:text="${user.name}"></td>
             </tr>
         </tbody>

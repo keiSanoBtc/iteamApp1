@@ -29,4 +29,6 @@ public interface UserMapper {
 
     void postBook(UserPlanBookRequest user);
 
+    List<User> userSearchedList();
+
 }

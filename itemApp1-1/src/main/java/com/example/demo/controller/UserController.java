@@ -98,6 +98,10 @@ public class UserController {
 //    	userList.add(user1);
 //    	userList.add(user2);
 //    	model.addAttribute("userList", userList);
+    	 List<User> allUserList = userService.userSearchAll();
+		 System.out.println(allUserList);
+		 model.addAttribute("allUserList", allUserList);
         return "userList";
     }
+
 }

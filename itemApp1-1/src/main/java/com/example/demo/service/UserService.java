@@ -47,4 +47,8 @@ public class UserService {
     public void postBook(UserPlanBookRequest userPlanBookRequest) {
         userMapper.postBook(userPlanBookRequest);
     }
+
+    public List<User> userSearchAll() {
+        return userMapper.userSearchedList();
+    }
 }
