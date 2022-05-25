@@ -10,5 +10,5 @@ import com.example.demo.entity.UserList;
 public interface UserListMapper {
 
 	List<UserList> userList();
-	
+
 }

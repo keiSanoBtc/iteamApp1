@@ -6,6 +6,15 @@
 	<select id="userSearch" resultType="com.example.demo.entity.User">
 		SELECT * FROM USER_TABLE WHERE USER_NAME = #{name};
     </select>
+    <select id="userList" resultType="com.example.demo.entity.User">
+		SELECT a.USER_NAME , b.BOOK_TITLE, COUNT()
+		  FROM (USER_TABLE a INNER JOIN BOOK_PLAN_TABLE b ON b.USER_ID = a.USER_ID)
+		                     INNER JOIN BOOK_TABLE c ON b.BOOK_ID = c.BOOK_ID
+		  WHERE a.USER_NAME = #{name}
+		  AND b.READ_FLAG = 1
+		  AND b.DELETE_FLAG = 0
+		 ORDER BY b.BOOK_ID ;
+    </select>
     <select id="userPlanBookList" resultType="com.example.demo.entity.Book">
     	SELECT c.BOOK_ID , b.BOOK_TITLE
 		  FROM (USER_TABLE a INNER JOIN BOOK_PLAN_TABLE b ON b.USER_ID = a.USER_ID)
@@ -35,6 +44,20 @@
 			SET BOOK_TITLE = #{book_name}
 			WHERE USER_ID = #{user_id}
 			  AND BOOK_ID = #{book_id};
+    </update>
+    <update id="deletePlanBook">
+    	UPDATE BOOK_PLAN_TABLE
+			SET DELETE_FLAG = 1
+			WHERE USER_ID = #{user_id}
+			  AND BOOK_ID = #{book_id}
+			  AND DELETE_FLAG = 0 ;
+    </update>
+    <update id="postBook">
+    	UPDATE BOOK_PLAN_TABLE
+			SET READ_FLAG = 1
+			WHERE USER_ID = #{user_id}
+			  AND BOOK_ID = #{book_id}
+			  AND READ_FLAG = 0 ;
     </update>
     <update id="deletePlanBook">
     	UPDATE BOOK_PLAN_TABLE
