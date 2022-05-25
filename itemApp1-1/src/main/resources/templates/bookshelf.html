@@ -26,15 +26,15 @@
                     <th>読みたい本リストに追加</th>
                 </tr>
             </thead>
-            <tbody>
-                <!-- 編集中 -->
-                <tbody th:each="book : ${allBookList}">
+            <!-- 編集中 -->
+            <tbody th:each="book : ${allBookList}">
+            	<tr>
                     <td th:text="${book.book_name}"></td>
-                <!-- 編集中 -->
                     <td><button onclick="location.href='edit'">編集</button></td>
                     <td><button>追加</button></td>
                 </tr>
             </tbody>
+            <!-- 編集中 -->
         </table>
     </main>
     <!-- main -->
