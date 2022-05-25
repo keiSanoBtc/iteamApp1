@@ -59,18 +59,4 @@
 			  AND BOOK_ID = #{book_id}
 			  AND READ_FLAG = 0 ;
     </update>
-    <update id="deletePlanBook">
-    	UPDATE BOOK_PLAN_TABLE
-			SET DELETE_FLAG = 1
-			WHERE USER_ID = #{user_id}
-			  AND BOOK_ID = #{book_id}
-			  AND DELETE_FLAG = 0 ;
-    </update>
-    <update id="postBook">
-    	UPDATE BOOK_PLAN_TABLE
-			SET READ_FLAG = 1
-			WHERE USER_ID = #{user_id}
-			  AND BOOK_ID = #{book_id}
-			  AND READ_FLAG = 0 ;
-    </update>
 </mapper>
