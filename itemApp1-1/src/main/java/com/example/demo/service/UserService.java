@@ -24,6 +24,10 @@ public class UserService {
         return userMapper.userSearch(userSearchRequest);
     }
 
+    public User userSearchById(UserSearchRequest userSearchRequest) {
+        return userMapper.userSearchById(userSearchRequest);
+    }
+
     public List<Book> userPlanBookList(UserSearchRequest userSearchRequest) {
         return userMapper.userPlanBookList(userSearchRequest);
     }

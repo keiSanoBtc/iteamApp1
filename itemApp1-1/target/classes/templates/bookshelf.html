@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <h1 class="header_title">積読リスト</h1>
+    </header>
+    <!-- header -->
+
+    <!-- main -->
+    <main>
+        <h1>本棚</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th class="display-1">本の題名</th>
+                    <th>読みたい本リストに追加</th>
+                </tr>
+            </thead>
+            <!-- 編集中 -->
+            <tbody th:each="book : ${myNotReadBookList}">
+            	<tr>
+                    <td th:text="${book.book_name}"></td>
+                    <td>
+				    	<form th:action="@{/addPlanBook}" th:object="${BookUserEditRequest}" th:method="post">
+							<div>
+								<input type="hidden" th:object="${user}" name="user_id" th:value="*{id}" />
+								<input type="hidden"  name="book_id" th:value="${book.id}" />
+								<input type="hidden"  name="book_name" th:value="${book.book_name}" />
+								<input type="submit" value="追加"  />
+							</div>
+						</form>
+				    </td>
+                </tr>
+            </tbody>
+            <!-- 編集中 -->
+        </table>
+    </main>
+    <!-- main -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>

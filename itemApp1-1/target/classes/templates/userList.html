@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ユーザー情報一覧</title>
+</head>
+<body>
+    <h1>ユーザー情報一覧</h1>
+
+    <div class="yomitai_title">
+    	<button id="btn_bookshelf" onclick="location.href='bookshelf'">本棚</button>
+        <button id="btn_userSearch" onclick="location.href='userSearch'">ユーザー検索</button>
+        <button id="btn_index" onclick="location.href='index'">ホームに戻る</button>
+    </div>
+
+    <table>
+    
+    <!-- 編集中 -->
+    <tbody>
+    	<tbody th:each="book : ${allBookList}">
+    		<td th:text="${book.book_name}"></td>
+    		<td><button onclick="location.href='edit'">編集</button></td>
+    		<td><button>追加</button></td>
+    		</tr>
+            </tbody>
+    <!-- 編集中 -->
+        <thead>
+            <tr>
+                <th>名前</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user : ${userList}" th:object="${userList}">
+                <td th:text="${user.name}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
