@@ -22,7 +22,8 @@
             <!-- ここにユーザー名を選択するドロップダウンリストを挿入します -->
         </div>
         <div>
-            <button>検索</button>
+        	<button id="btn_bookshelf" onclick="location.href='bookshelf'">本棚</button>
+            <button id="btn_index" onclick="location.href='index'">ホームに戻る</button>
         </div>
         <form th:action="@{/user}" th:object="${userSearchRequest}"
 	        th:method="post">

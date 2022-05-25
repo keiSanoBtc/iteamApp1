@@ -6,9 +6,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.dto.UserPlanBookEditRequest;
+import com.example.demo.dto.UserPlanBookRequest;
 import com.example.demo.dto.UserSearchRequest;
 import com.example.demo.entity.Book;
 import com.example.demo.entity.User;
+import com.example.demo.entity.UserPlanBook;
 import com.example.demo.repository.UserMapper;
 
 @Service
@@ -29,11 +32,19 @@ public class UserService {
         return userMapper.userPastBookList(userSearchRequest);
     }
 
-    public void deletePlanBook(UserSearchRequest userSearchRequest) {
-        userMapper.deletePlanBook(userSearchRequest);
+    public UserPlanBook userPlanBookEdit(UserPlanBookRequest userPlanBookRequest) {
+        return userMapper.userPlanBookEdit(userPlanBookRequest);
     }
 
-    public void postBook(UserSearchRequest userSearchRequest) {
-        userMapper.postBook(userSearchRequest);
+    public void userPlanBookEditComplete(UserPlanBookEditRequest userPlanBookEditRequest) {
+        userMapper.userPlanBookEditComplete(userPlanBookEditRequest);
+    }
+
+    public void deletePlanBook(UserPlanBookRequest userPlanBookRequest) {
+        userMapper.deletePlanBook(userPlanBookRequest);
+    }
+
+    public void postBook(UserPlanBookRequest userPlanBookRequest) {
+        userMapper.postBook(userPlanBookRequest);
     }
 }

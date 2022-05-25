@@ -5,9 +5,11 @@ import lombok.Data;
 
 @AllArgsConstructor
 @Data
-public class Book {
+public class UserPlanBook {
 
-	public Long id;
+    public Long user_id;
+
+    public Long book_id;
 
     public String book_name;
 }
