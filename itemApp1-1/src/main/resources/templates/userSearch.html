@@ -15,8 +15,8 @@
     <!-- header -->
     <header>
         <div class="header_wrapper">
-            <img src="../static/image/image.jfif" alt="topimg" class="header_image mw-100">
-            <p class="header_text text-light display-1">積読リスト</p>
+            <img src="../static/image/image.jfif" alt="topimg" class="header_image mw-100" onclick="location.href='index'">
+            <p class="header_text text-light display-1">reading list</p>
         </div>
     </header>
     <!-- header -->
@@ -30,7 +30,7 @@
         	<button id="btn_bookshelf" onclick="location.href='bookshelf'">本棚</button>
             <button id="btn_index" onclick="location.href='index'">ホームに戻る</button>
         </div> -->
-        <div id="userSearch_wrapper">
+        <div id="userSearch_wrapper" class="form-group">
             <form th:action="@{/user}" th:object="${userSearchRequest}"
                 th:method="post">
                 <div>
