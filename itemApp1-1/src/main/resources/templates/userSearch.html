@@ -15,8 +15,8 @@
     <!-- header -->
     <header>
         <div class="header_wrapper">
-            <img src="../static/image/image.jfif" alt="topimg" class="header_image mw-100">
-            <p class="header_text text-light display-1">積読リスト</p>
+            <img src="../static/image/image.jfif" alt="topimg" class="header_image mw-100" onclick="location.href='index'">
+            <p class="header_text text-light display-1">reading list</p>
         </div>
     </header>
     <!-- header -->
@@ -29,14 +29,16 @@
         <div>
             <button>検索</button>
         </div> -->
-        <div id="userSearch_wrapper">
+        <div id="userSearch_wrapper" class="form-group">
             <form th:action="@{/user}" th:object="${userSearchRequest}"
                 th:method="post">
-                <div>
-                    <p class="d-inline">ID：</p>
-                    <input type="text" class="d-inline" name="name" />
-                    <input type="submit" class="d-inline btn btn-outline-success" value="検索" />
-                </div>
+                <table>
+                    <tr>
+                        <th><label>ID：</labe></th>
+                        <td><input type="text" class="form-control" name="name" /></td>
+                        <td><input type="submit" class="btn btn-outline-success" value="検索" /></td>
+                    </tr>
+                </table>
             </form>
         </div>
     </main>
