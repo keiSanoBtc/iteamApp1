@@ -6,8 +6,19 @@
 	<select id="userSearch" resultType="com.example.demo.entity.User">
 		SELECT * FROM USER_TABLE WHERE USER_NAME = #{name};
     </select>
+<<<<<<< HEAD
     <select id="userSearchAll" resultType="com.example.demo.entity.User">
 		SELECT * FROM USER_TABLE;
+=======
+    <select id="userList" resultType="com.example.demo.entity.User">
+		SELECT a.USER_NAME , b.BOOK_TITLE, COUNT()
+		  FROM (USER_TABLE a INNER JOIN BOOK_PLAN_TABLE b ON b.USER_ID = a.USER_ID)
+		                     INNER JOIN BOOK_TABLE c ON b.BOOK_ID = c.BOOK_ID
+		  WHERE a.USER_NAME = #{name}
+		  AND b.READ_FLAG = 1
+		  AND b.DELETE_FLAG = 0
+		 ORDER BY b.BOOK_ID ;
+>>>>>>> c0b9f4bb277c07b24bfd3d747da09d5cab6451d6
     </select>
     <select id="userPlanBookList" resultType="com.example.demo.entity.Book">
     	SELECT c.BOOK_ID , b.BOOK_TITLE

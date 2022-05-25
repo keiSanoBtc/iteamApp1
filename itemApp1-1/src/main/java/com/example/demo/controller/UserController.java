@@ -103,5 +103,4 @@ public class UserController {
 		 model.addAttribute("allUserList", allUserList);
         return "userList";
     }
-
 }
