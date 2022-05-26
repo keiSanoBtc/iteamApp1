@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/style.css">
     <link rel="resetsheet" href="../static/reset.css">
+    <link rel="stylesheet" href="../static/bookshelf.css">
 </head>
 <body>
     <!-- header -->
@@ -22,24 +23,31 @@
 
     <!-- main -->
     <main>
-        <h1>本棚</h1>
-        <table>
+        <h1 id="bookshelf_title">本棚</h1>
+        <table class="table">
             <thead>
                 <tr>
-                    <th class="display-1">本の題名</th>
-                    <th>本の題名を編集する</th>
+                    <th>本の題名</th>
                     <th>読みたい本リストに追加</th>
                 </tr>
             </thead>
-            <tbody>
-                <!-- 未編集 -->
-                <tr th:each="user : ${userList}" th:object="${userList}">
-                    <td th:text="${user.name}"></td>
-                <!-- 未編集 -->
-                    <td><button onclick="location.href='edit'">編集</button></td>
-                    <td><button>追加</button></td>
+            <!-- 編集中 -->
+            <tbody th:each="book : ${myNotReadBookList}">
+            	<tr>
+                    <td th:text="${book.book_name}"></td>
+                    <td>
+				    	<form th:action="@{/addPlanBook}" th:object="${BookUserEditRequest}" th:method="post">
+							<div>
+								<input type="hidden" th:object="${user}" name="user_id" th:value="*{id}" />
+								<input type="hidden"  name="book_id" th:value="${book.id}" />
+								<input type="hidden"  name="book_name" th:value="${book.book_name}" />
+								<input type="submit" class="btn btn-outline-success"  value="追加"  />
+							</div>
+						</form>
+				    </td>
                 </tr>
             </tbody>
+            <!-- 編集中 -->
         </table>
     </main>
     <!-- main -->

@@ -56,5 +56,11 @@ body{
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     --bs-btn-disabled-color: #21593B;
     --bs-btn-disabled-bg: transparent;
-    --bs-gradient: none;}
+    --bs-gradient: none;
+}
+
+.table {
+    width: auto;
+    margin: auto;
+}
 /* ------- main ------ */
