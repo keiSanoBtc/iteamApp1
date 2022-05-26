@@ -6,7 +6,7 @@
 </head>
 <body>
 	<p>読みたい本リストに追加しました。</p>
-	<button class="btn" id="delete_complete" onclick="location.href='index'">ホームに戻る</button>
+	<button class="btn" id="back_to_index" onclick="location.href='index'">ホームに戻る</button>
     <form th:action="@{/user}" th:object="${userSearchRequest}" th:method="post">
     	<div>
      		<input type="hidden" th:object="${user}" name="id" th:value="*{id}" />

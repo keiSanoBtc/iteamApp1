@@ -95,7 +95,7 @@ public class UserController {
         return "kidokuComplete";
     }
 
-//  読みたい本を未読にする
+//  既読の本を未読にする
     @RequestMapping(value = "/midokuComplete", method = RequestMethod.POST)
     public String midokuBook(@ModelAttribute UserPlanBookRequest userPlanBookRequest, Model model) {
     	User user = userService.userDeleteSearch(userPlanBookRequest);

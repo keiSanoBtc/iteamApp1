@@ -23,13 +23,10 @@
 
     <!-- main -->
     <main>
-        <!-- <div>
-            <p>ユーザー名</p>
+        <div>
+        	<button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userList'">利用者一覧を見る</button>
+            <button type="button" class="btn col btn-outline-success" id="back_to_index" onclick="location.href='index'">ホームに戻る</button>
         </div>
-        <div><<<<<<< HEAD
-        	<button id="btn_bookshelf" onclick="location.href='bookshelf'">本棚</button>
-            <button id="btn_index" onclick="location.href='index'">ホームに戻る</button>
-        </div> -->
         <div id="userSearch_wrapper" class="form-group">
             <form th:action="@{/user}" th:object="${userSearchRequest}"
                 th:method="post">
