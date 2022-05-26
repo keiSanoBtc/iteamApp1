@@ -104,12 +104,23 @@
                     <table>
                         <thead>
                             <tr>
+                            	<th>タイトル</th>
+                            	<th>未読に変更</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr th:each="book : ${userPastBookList}">
+                        	<tr th:each="book : ${userPastBookList}">
                                 <td th:text="${book.book_name}"></td>
-                            </tr>
+                        		<td>
+				               		<form th:action="@{/midokuComplete}" th:object="${userPlanBookRequest}" th:method="post">
+								        <div>
+								        	<input type="hidden" th:object="${user}" name="user_id" th:value="*{id}" />
+								        	<input type="hidden"  name="book_id" th:value="${book.id}" />
+								            <input type="submit" value="未読"  />
+								        </div>
+								 	</form>
+				            	</td>
+				            </tr>
                         </tbody>
                     </table>
                 </div>

@@ -51,4 +51,8 @@ public class UserService {
     public void postBook(UserPlanBookRequest userPlanBookRequest) {
         userMapper.postBook(userPlanBookRequest);
     }
+
+    public void midokuBook(UserPlanBookRequest userPlanBookRequst) {
+    	userMapper.midokuBook(userPlanBookRequst);
+    }
 }

@@ -31,4 +31,6 @@ public interface UserMapper {
 
     void postBook(UserPlanBookRequest user);
 
+    void midokuBook(UserPlanBookRequest user);
+
 }
