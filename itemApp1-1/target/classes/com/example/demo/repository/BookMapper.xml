@@ -7,7 +7,7 @@
 		 SELECT * FROM BOOK_TABLE;
     </select>
     <select id="lastPlanBookNum" resultType="com.example.demo.entity.Book">
-    	 SELECT id, book_title from book_plan_table ORDER BY ID DESC LIMIT 1;
+    	 SELECT ID, BOOK_TITLE FROM BOOK_PLAN_TABLE ORDER BY ID DESC LIMIT 1;
     </select>
     <insert id="addPlanBook" >
 		 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
