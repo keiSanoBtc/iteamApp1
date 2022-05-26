@@ -1,0 +1,13 @@
+@charset "UTF-8";
+main {
+    margin: 30px 50px;
+}
+
+p {
+    text-align: center;
+}
+
+.btn {
+    display: block;
+    margin: auto;
+}

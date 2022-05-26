@@ -20,9 +20,7 @@
 
     <!-- main -->
         <p>編集しました</p>
-
         <button class="btn" id="delete_complete" onclick="location.href='index'">ホームに戻る</button>
-
         <form th:action="@{/user}" th:object="${userPlanBookRequestt}" th:method="post">
 	    	<div>
 	     		<input type="hidden" th:object="${user}" name="id" th:value="*{id}" />

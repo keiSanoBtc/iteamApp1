@@ -24,17 +24,19 @@
     <!-- main -->
     <main>
         <div>
-        	<button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userList'">利用者一覧を見る</button>
+        	  <button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userList'">利用者一覧を見る</button>
             <button type="button" class="btn col btn-outline-success" id="back_to_index" onclick="location.href='index'">ホームに戻る</button>
         </div>
         <div id="userSearch_wrapper" class="form-group">
             <form th:action="@{/user}" th:object="${userSearchRequest}"
                 th:method="post">
-                <div>
-                    <p class="d-inline">名前：</p>
-                    <input type="text" class="d-inline" name="name" />
-                    <input type="submit" class="d-inline btn btn-outline-success" value="検索" />
-                </div>
+                <table>
+                  <tr>
+                    <th><label>名前：</labe></th>
+                    <td><input type="text" class="form-control" name="name" /></td>
+                    <td><input type="submit" class="btn btn-outline-success" value="検索" /></td>
+                  </tr>
+                </table>
             </form>
         </div>
     </main>

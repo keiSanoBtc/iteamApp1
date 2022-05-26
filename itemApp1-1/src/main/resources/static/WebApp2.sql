@@ -1,9 +1,9 @@
-#########、E前�E琁E、E#########################################################################################
+#########【 前処理 】##########################################################################################
 
-#利用老E��ーブル
+#利用者テーブル
 CREATE TABLE USER_TABLE (
-  USER_ID           INT(9)          NOT NULL PRIMARY KEY    COMMENT '利用老ED',
-  USER_NAME         VARCHAR(100)    NOT NULL                COMMENT '利用老E��'
+  USER_ID           INT(9)          NOT NULL PRIMARY KEY    COMMENT '利用者ID',
+  USER_NAME         VARCHAR(100)    NOT NULL                COMMENT '利用者名'
 );
 INSERT INTO USER_TABLE (USER_ID , USER_NAME)
 VALUES (1, 'OI') ;
@@ -16,27 +16,27 @@ VALUES (4, 'HAYASHI') ;
 INSERT INTO USER_TABLE (USER_ID , USER_NAME)
 VALUES (5, 'MAMIYA') ;
 
-#本チE�Eブル
+#本テーブル
 CREATE TABLE BOOK_TABLE (
   BOOK_ID           INT(9)          NOT NULL PRIMARY KEY    COMMENT '本ID',
   BOOK_TITLE         VARCHAR(100)    NOT NULL                COMMENT '本のタイトル'
 );
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
-VALUES (1, 'ワンピ�Eス') ;
+VALUES (1, 'ワンピース') ;
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
 VALUES (2, 'スパイファミリー') ;
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
-VALUES (3, 'ハリーポッターと賢老E�E石') ;
+VALUES (3, 'ハリーポッターと賢者の石') ;
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
 VALUES (4, 'Java入門') ;
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
-VALUES (5, 'springboot参老E��') ;
+VALUES (5, 'springboot参考書') ;
 
 
-#本読亁E��況テーブル
+#本読了状況テーブル
 CREATE TABLE BOOK_PLAN_TABLE (
   ID                INT(9)           NOT NULL    COMMENT 'ID',
-  USER_ID           INT(9)           NOT NULL    COMMENT '利用老ED',
+  USER_ID           INT(9)           NOT NULL    COMMENT '利用者ID',
   BOOK_ID           INT(9)           NOT NULL    COMMENT '本ID',
   BOOK_TITLE        VARCHAR(100)     NOT NULL    COMMENT '本のタイトル',
   READ_FLAG         INT(1)           DEFAULT 0   COMMENT '既読フラグ',
@@ -44,25 +44,25 @@ CREATE TABLE BOOK_PLAN_TABLE (
   PRIMARY KEY(ID, USER_ID, BOOK_ID)
 );
 
-#チE��トデータ
+#テストデータ
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (1, 1, 1, 'ワンピ�Eス') ;
+VALUES (1, 1, 1, 'ワンピース') ;
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
 VALUES (2, 1, 2, 'スパイファミリー') ;
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (3, 2, 1, 'ワンピ�Eス') ;
+VALUES (3, 2, 1, 'ワンピース') ;
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
 VALUES (4, 2, 2, 'スパイファミリー') ;
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
 VALUES (5, 2, 4, 'Java入門') ;
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (6, 3, 1, 'ワンピ�Eス') ;
+VALUES (6, 3, 1, 'ワンピース') ;
 
 
-#########、E編雁E、E#########################################################################################
+#########【 編集 】##########################################################################################
 #読みたい本の追加
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (10, 1, 2, '進撁E�E巨人')
+VALUES (10, 1, 2, '進撃の巨人')
 
 
 #読みたい本の一覧
@@ -86,19 +86,19 @@ SELECT a.USER_NAME , c.BOOK_TITLE
 
 
 
-#読みたい本の編雁E
+#読みたい本の編集
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (11, 1, 2, '進撁E�E巨人')
+VALUES (11, 1, 2, '進撃の巨人')
 
 UPDATE BOOK_PLAN_TABLE
-SET BOOK_TITLE = '変更後�Eタイトル3',
+SET BOOK_TITLE = '変更後のタイトル3',
     DELETE_FLAG = 1
 WHERE USER_ID = 1
   AND BOOK_ID = 2;
 
 /*
 UPDATE BOOK_TABLE
-SET c.BOOK_TITLE = '変更後�Eタイトル'
+SET c.BOOK_TITLE = '変更後のタイトル'
 FROM (USER_TABLE a INNER JOIN BOOK_PLAN_TABLE b ON b.USER_ID = a.USER_ID)
                      INNER JOIN BOOK_TABLE c ON b.BOOK_ID = c.BOOK_ID
 WHERE USER_ID = 1
@@ -129,16 +129,16 @@ SET READ_FLAG = 0
 WHERE USER_ID = 1
   AND BOOK_ID = 2
   AND READ_FLAG = 1 ;
-=======
+
 --DROP TABLE book_plan_table;
 
 
-#########、E前�E琁E、E#########################################################################################
+#########【 前処理 】##########################################################################################
 
-#利用老E��ーブル
+#利用者テーブル
 CREATE TABLE USER_TABLE (
-  USER_ID           INT(9)          NOT NULL PRIMARY KEY    COMMENT '利用老ED',
-  USER_NAME         VARCHAR(100)    NOT NULL                COMMENT '利用老E��'
+  USER_ID           INT(9)          NOT NULL PRIMARY KEY    COMMENT '利用者ID',
+  USER_NAME         VARCHAR(100)    NOT NULL                COMMENT '利用者名'
 );
 INSERT INTO USER_TABLE (USER_ID , USER_NAME)
 VALUES (1, 'OI') ;
@@ -151,27 +151,27 @@ VALUES (4, 'HAYASHI') ;
 INSERT INTO USER_TABLE (USER_ID , USER_NAME)
 VALUES (5, 'MAMIYA') ;
 
-#本チE�Eブル
+#本テーブル
 CREATE TABLE BOOK_TABLE (
   BOOK_ID           INT(9)          NOT NULL PRIMARY KEY    COMMENT '本ID',
   BOOK_TITLE         VARCHAR(100)    NOT NULL                COMMENT '本のタイトル'
 );
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
-VALUES (1, 'ワンピ�Eス') ;
+VALUES (1, 'ワンピース') ;
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
 VALUES (2, 'スパイファミリー') ;
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
-VALUES (3, 'ハリーポッターと賢老E�E石') ;
+VALUES (3, 'ハリーポッターと賢者の石') ;
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
 VALUES (4, 'Java入門') ;
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
-VALUES (5, 'springboot参老E��') ;
+VALUES (5, 'springboot参考書') ;
 
 
-#本読亁E��況テーブル
+#本読了状況テーブル
 CREATE TABLE BOOK_PLAN_TABLE (
   ID                INT(9)           NOT NULL    COMMENT 'ID',
-  USER_ID           INT(9)           NOT NULL    COMMENT '利用老ED',
+  USER_ID           INT(9)           NOT NULL    COMMENT '利用者ID',
   BOOK_ID           INT(9)           NOT NULL    COMMENT '本ID',
   BOOK_TITLE        VARCHAR(100)     NOT NULL    COMMENT '本のタイトル',
   READ_FLAG         INT(1)           DEFAULT 0   COMMENT '既読フラグ',
@@ -179,25 +179,25 @@ CREATE TABLE BOOK_PLAN_TABLE (
   PRIMARY KEY(ID, USER_ID, BOOK_ID)
 );
 
-#チE��トデータ
+#テストデータ
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (1, 1, 1, 'ワンピ�Eス') ;
+VALUES (1, 1, 1, 'ワンピース') ;
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
 VALUES (2, 1, 2, 'スパイファミリー') ;
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (3, 2, 1, 'ワンピ�Eス') ;
+VALUES (3, 2, 1, 'ワンピース') ;
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
 VALUES (4, 2, 2, 'スパイファミリー') ;
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
 VALUES (5, 2, 4, 'Java入門') ;
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (6, 3, 1, 'ワンピ�Eス') ;
+VALUES (6, 3, 1, 'ワンピース') ;
 
 
-#########、E編雁E、E#########################################################################################
+#########【 編集 】##########################################################################################
 #読みたい本の追加
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (10, 1, 2, '進撁E�E巨人')
+VALUES (10, 1, 2, '進撃の巨人')
 
 
 #読みたい本の一覧
@@ -221,19 +221,19 @@ SELECT a.USER_NAME , c.BOOK_TITLE
 
 
 
-#読みたい本の編雁E
+#読みたい本の編集
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (11, 1, 2, '進撁E�E巨人')
+VALUES (11, 1, 2, '進撃の巨人')
 
 UPDATE BOOK_PLAN_TABLE
-SET BOOK_TITLE = '変更後�Eタイトル3',
+SET BOOK_TITLE = '変更後のタイトル3',
     DELETE_FLAG = 1
 WHERE USER_ID = 1
   AND BOOK_ID = 2;
 
 /*
 UPDATE BOOK_TABLE
-SET c.BOOK_TITLE = '変更後�Eタイトル'
+SET c.BOOK_TITLE = '変更後のタイトル'
 FROM (USER_TABLE a INNER JOIN BOOK_PLAN_TABLE b ON b.USER_ID = a.USER_ID)
                      INNER JOIN BOOK_TABLE c ON b.BOOK_ID = c.BOOK_ID
 WHERE USER_ID = 1
@@ -263,9 +263,9 @@ UPDATE BOOK_PLAN_TABLE
 SET READ_FLAG = 0
 WHERE USER_ID = 1
   AND BOOK_ID = 2
-  AND READ_FLAG = 1 
+  AND READ_FLAG = 1
 
-                 
+
 SELECT a.USER_NAME, IFNULL(SUM(b.READ_FLAG),0)
 FROM (USER_TABLE a LEFT OUTER JOIN BOOK_PLAN_TABLE b ON b.USER_ID = a.USER_ID)
 LEFT OUTER JOIN BOOK_TABLE c ON b.BOOK_ID = c.BOOK_ID

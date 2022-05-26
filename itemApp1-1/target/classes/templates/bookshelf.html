@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
     <link rel="resetsheet" href="./reset.css">
+    <link rel="stylesheet" href="./bookshelf.css">
 </head>
 <body>
     <!-- header -->
@@ -22,15 +23,13 @@
 
     <!-- main -->
     <main>
-        <h1>本棚</h1>
 
+      <h1 id="bookshelf_title">本棚</h1>
+      <table class="table">
         <div>
-        	<button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userList'">利用者一覧を見る</button>
+        	  <button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userList'">利用者一覧を見る</button>
             <button type="button" class="btn col btn-outline-success" id="back_to_index" onclick="location.href='index'">ホームに戻る</button>
-        </div>
-
-        <table>
-            <thead>
+        </div>            <thead>
                 <tr>
                     <th>本の題名</th>
                     <th>読みたい本リストに追加</th>
@@ -46,7 +45,7 @@
 								<input type="hidden" th:object="${user}" name="user_id" th:value="*{id}" />
 								<input type="hidden"  name="book_id" th:value="${book.id}" />
 								<input type="hidden"  name="book_name" th:value="${book.book_name}" />
-								<input type="submit" value="追加"  />
+								<input type="submit" class="btn btn-outline-success"  value="追加"  />
 							</div>
 						</form>
 				    </td>

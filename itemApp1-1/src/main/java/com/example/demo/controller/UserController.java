@@ -40,11 +40,10 @@ public class UserController {
 //		 System.out.println(userSearchRequest);
 		 List<Book> userPlanBookList = userService.userPlanBookList(userSearchRequest);
 		 List<Book> userPastBookList = userService.userPastBookList(userSearchRequest);
-		 @NotBlank(message = "入力してください")
 		 User user = userService.userSearch(userSearchRequest);
 //		 System.out.println(userSearchRequest.name);
+//		 System.out.println(user);
 //		 System.out.println(userPlanBookList);
-//		 System.out.println(userPastBookList);
 		 model.addAttribute("user", user);
 		 model.addAttribute("userPastBookList", userPastBookList);
 		 model.addAttribute("userPlanBookList", userPlanBookList);

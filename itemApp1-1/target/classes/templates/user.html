@@ -110,42 +110,41 @@
                         </thead>
                         <tbody>
                         	<tr th:each="book : ${userPastBookList}">
-                                <td th:text="${book.book_name}"></td>
+                            <td th:text="${book.book_name}"></td>
                         		<td>
-				                	<form th:action="@{/edit}" th:object="${userPlanBookRequest}" th:method="post">
-								        <div>
-								        	<input type="hidden" th:object="${user}" name="user_id" th:value="*{id}" />
-								        	<input type="hidden"  name="book_id" th:value="${book.id}" />
-								            <input type="submit" value="編集"  />
-								        </div>
-								    </form>
-				                </td>
+				                        <form th:action="@{/edit}" th:object="${userPlanBookRequest}" th:method="post">
+          								        <div>
+          								        	<input type="hidden" th:object="${user}" name="user_id" th:value="*{id}" />
+          								        	<input type="hidden"  name="book_id" th:value="${book.id}" />
+          								          <input type="submit" value="編集"  />
+          								        </div>
+    								    　　　  </form>
+    				                </td>
                         		<td>
-				               		<form th:action="@{/midokuComplete}" th:object="${userPlanBookRequest}" th:method="post">
-								        <div>
-								        	<input type="hidden" th:object="${user}" name="user_id" th:value="*{id}" />
-								        	<input type="hidden"  name="book_id" th:value="${book.id}" />
-								            <input type="submit" value="未読"  />
-								        </div>
-								 	</form>
-				            	</td>
-				            	<td>
-				               		<form th:action="@{/delete}" th:object="${userPlanBookRequest}" th:method="post">
-								        <div>
-								        	<input type="hidden" th:object="${user}" name="user_id" th:value="*{id}" />
-								        	<input type="hidden"  name="book_id" th:value="${book.id}" />
-								            <input type="submit" value="削除"  />
-								        </div>
-								 	</form>
-				            	</td>
-				            </tr>
+				               		      <form th:action="@{/midokuComplete}" th:object="${userPlanBookRequest}" th:method="post">
+								                  <div>
+        								        	  <input type="hidden" th:object="${user}" name="user_id" th:value="*{id}" />
+        								        	  <input type="hidden"  name="book_id" th:value="${book.id}" />
+        								            <input type="submit" value="未読"  />
+								                  </div>
+								 	              </form>
+				            	      </td>
+				            	      <td>
+  				               		     <form th:action="@{/delete}" th:object="${userPlanBookRequest}" th:method="post">
+  								                 <div>
+          								        	<input type="hidden" th:object="${user}" name="user_id" th:value="*{id}" />
+          								        	<input type="hidden"  name="book_id" th:value="${book.id}" />
+            								        <input type="submit" value="削除"  />
+  								                </div>
+  								 	             </form>
+				            	      </td>
+				                  </tr>
                         </tbody>
                     </table>
                 </div>
+              </div>
             </div>
-        </div>
         <!-- 読んだ本リスト -->
-
     </main>
     <!-- main -->
 

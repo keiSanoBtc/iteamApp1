@@ -47,6 +47,7 @@ public class BookController {
 		 System.out.println(bookUserEditRequest.book_name);
 		 bookService.addPlanBook(bookUserEditRequest);
 		 model.addAttribute("user", user);
+
 		return "add";
 	 }
 }
