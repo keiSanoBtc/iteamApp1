@@ -26,7 +26,7 @@ VALUES (2, 'スパイファミリー') ;
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
 VALUES (3, 'ハリーポッターと賢者の石') ;
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
-VALUES (4, 'Java入門') ;
+VALUES (4, 'Java入門');
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
 VALUES (5, 'springboot参考書') ;
 

@@ -19,10 +19,14 @@
     </header> -->
     
     <header>
+<<<<<<< HEAD
         <div class="header_wrapper">
             <img src="../static/image/image.jfif" alt="topimg" class="header_image mw-100" onclick="location.href='index'">
             <p class="header_text text-light display-1">reading list</p>
         </div>
+=======
+        <h1 class="header_title" th:object="${user}"><span th:text="*{name}"></span>の積読リスト</h1>
+>>>>>>> ad05c9f (editted bookshelf.html and so on)
     </header>
     <!-- header -->
 
@@ -31,10 +35,15 @@
         <!-- 読みたい本リスト -->
         <div class="yomitai_wrapper">
             <div class="yomitai_title">
+<<<<<<< HEAD
                 <button onclick="location.href='bookshelf'">本棚</button>
+=======
+                <button id="btn_bookshelf" onclick="location.href='bookshelf'">本棚</button>
+>>>>>>> ad05c9f (editted bookshelf.html and so on)
             </div>
             <div class="yomitai_list">
                 <!-- to Springチーム：ここに読みたい本リストを挿入 -->
+                <h2>本棚</h2>
                 <div>
                     <table>
                         <thead>
