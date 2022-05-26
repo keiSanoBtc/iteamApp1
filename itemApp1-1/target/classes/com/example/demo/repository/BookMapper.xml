@@ -13,4 +13,8 @@
 		 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
 		 	VALUES (#{last_id}, #{user_id}, #{book_id}, #{book_name})
     </insert>
+
+    <select id="userSearch" resultType="com.example.demo.entity.User">
+    	 SELECT USER_ID, USER_NAME FROM USER_TABLE WHERE USER_ID = #{user_id};
+    </select>
 </mapper>

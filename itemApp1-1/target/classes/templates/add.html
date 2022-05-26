@@ -8,5 +8,12 @@
 	<p>読みたい本リストに追加しました。</p>
 	<a href="user.html" th:fref="@{/user}">積読リストに戻る</a>
 	<button class="btn" id="delete_complete" onclick="location.href='index'">ホームに戻る</button>
+    <form th:action="@{/user}" th:object="${userSearchRequest}" th:method="post">
+    	<div>
+     		<input type="hidden" th:object="${user}" name="id" th:value="*{id}" />
+     		<input type="hidden" th:object="${user}" name="name" th:value="*{name}" />
+         	<input type="submit" value="積読リストに戻る"  />
+    	</div>
+	</form>
 </body>
 </html>

@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 import com.example.demo.dto.BookUserEditRequest;
 import com.example.demo.dto.UserSearchRequest;
 import com.example.demo.entity.Book;
+import com.example.demo.entity.User;
 
 @Mapper
 public interface BookMapper {
@@ -16,5 +17,7 @@ public interface BookMapper {
 	void addPlanBook(BookUserEditRequest user);
 
 	Book lastPlanBookNum();
+
+	User userSearch(BookUserEditRequest bookUserEditRequest);
 
 }
