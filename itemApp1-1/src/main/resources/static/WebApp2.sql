@@ -1,13 +1,9 @@
-<<<<<<< HEAD
---DROP TABLE book_plan_table;
+#########ã€ å‰å‡¦ç† ã€‘##########################################################################################
 
-
-#########y ‘Oˆ— z##########################################################################################
-
-#—˜—pŽÒƒe[ƒuƒ‹
+#åˆ©ç”¨è€…ãƒ†ãƒ¼ãƒ–ãƒ«
 CREATE TABLE USER_TABLE (
-  USER_ID           INT(9)          NOT NULL PRIMARY KEY    COMMENT '—˜—pŽÒID',
-  USER_NAME         VARCHAR(100)    NOT NULL                COMMENT '—˜—pŽÒ–¼'                 
+  USER_ID           INT(9)          NOT NULL PRIMARY KEY    COMMENT 'åˆ©ç”¨è€…ID',
+  USER_NAME         VARCHAR(100)    NOT NULL                COMMENT 'åˆ©ç”¨è€…å'
 );
 INSERT INTO USER_TABLE (USER_ID , USER_NAME)
 VALUES (1, 'OI') ;
@@ -20,98 +16,98 @@ VALUES (4, 'HAYASHI') ;
 INSERT INTO USER_TABLE (USER_ID , USER_NAME)
 VALUES (5, 'MAMIYA') ;
 
-#–{ƒe[ƒuƒ‹
+#æœ¬ãƒ†ãƒ¼ãƒ–ãƒ«
 CREATE TABLE BOOK_TABLE (
-  BOOK_ID           INT(9)          NOT NULL PRIMARY KEY    COMMENT '–{ID',
-  BOOK_TITLE         VARCHAR(100)    NOT NULL                COMMENT '–{‚Ìƒ^ƒCƒgƒ‹'                 
+  BOOK_ID           INT(9)          NOT NULL PRIMARY KEY    COMMENT 'æœ¬ID',
+  BOOK_TITLE         VARCHAR(100)    NOT NULL                COMMENT 'æœ¬ã®ã‚¿ã‚¤ãƒˆãƒ«'
 );
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
-VALUES (1, 'ƒƒ“ƒs[ƒX') ;
+VALUES (1, 'ãƒ¯ãƒ³ãƒ”ãƒ¼ã‚¹') ;
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
-VALUES (2, 'ƒXƒpƒCƒtƒ@ƒ~ƒŠ[') ;
+VALUES (2, 'ã‚¹ãƒ‘ã‚¤ãƒ•ã‚¡ãƒŸãƒªãƒ¼') ;
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
-VALUES (3, 'ƒnƒŠ[ƒ|ƒbƒ^[‚ÆŒ«ŽÒ‚ÌÎ') ;
+VALUES (3, 'ãƒãƒªãƒ¼ãƒãƒƒã‚¿ãƒ¼ã¨è³¢è€…ã®çŸ³') ;
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
-VALUES (4, 'Java“ü–å') ;
+VALUES (4, 'Javaå…¥é–€') ;
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
-VALUES (5, 'springbootŽQl‘') ;
+VALUES (5, 'springbootå‚è€ƒæ›¸') ;
 
 
-#–{“Ç—¹ó‹µƒe[ƒuƒ‹
+#æœ¬èª­äº†çŠ¶æ³ãƒ†ãƒ¼ãƒ–ãƒ«
 CREATE TABLE BOOK_PLAN_TABLE (
   ID                INT(9)           NOT NULL    COMMENT 'ID',
-  USER_ID           INT(9)           NOT NULL    COMMENT '—˜—pŽÒID',
-  BOOK_ID           INT(9)           NOT NULL    COMMENT '–{ID',
-  BOOK_TITLE        VARCHAR(100)     NOT NULL    COMMENT '–{‚Ìƒ^ƒCƒgƒ‹', 
-  READ_FLAG         INT(1)           DEFAULT 0   COMMENT 'Šù“Çƒtƒ‰ƒO',
-  DELETE_FLAG       INT(1)           DEFAULT 0   COMMENT 'íœƒtƒ‰ƒO',
-  PRIMARY KEY(ID, USER_ID, BOOK_ID)             
+  USER_ID           INT(9)           NOT NULL    COMMENT 'åˆ©ç”¨è€…ID',
+  BOOK_ID           INT(9)           NOT NULL    COMMENT 'æœ¬ID',
+  BOOK_TITLE        VARCHAR(100)     NOT NULL    COMMENT 'æœ¬ã®ã‚¿ã‚¤ãƒˆãƒ«',
+  READ_FLAG         INT(1)           DEFAULT 0   COMMENT 'æ—¢èª­ãƒ•ãƒ©ã‚°',
+  DELETE_FLAG       INT(1)           DEFAULT 0   COMMENT 'å‰Šé™¤ãƒ•ãƒ©ã‚°',
+  PRIMARY KEY(ID, USER_ID, BOOK_ID)
 );
 
-#ƒeƒXƒgƒf[ƒ^
+#ãƒ†ã‚¹ãƒˆãƒ‡ãƒ¼ã‚¿
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (1, 1, 1, 'ƒƒ“ƒs[ƒX') ;
+VALUES (1, 1, 1, 'ãƒ¯ãƒ³ãƒ”ãƒ¼ã‚¹') ;
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (2, 1, 2, 'ƒXƒpƒCƒtƒ@ƒ~ƒŠ[') ;
+VALUES (2, 1, 2, 'ã‚¹ãƒ‘ã‚¤ãƒ•ã‚¡ãƒŸãƒªãƒ¼') ;
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (3, 2, 1, 'ƒƒ“ƒs[ƒX') ;
+VALUES (3, 2, 1, 'ãƒ¯ãƒ³ãƒ”ãƒ¼ã‚¹') ;
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (4, 2, 2, 'ƒXƒpƒCƒtƒ@ƒ~ƒŠ[') ;
+VALUES (4, 2, 2, 'ã‚¹ãƒ‘ã‚¤ãƒ•ã‚¡ãƒŸãƒªãƒ¼') ;
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (5, 2, 4, 'Java“ü–å') ;
+VALUES (5, 2, 4, 'Javaå…¥é–€') ;
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (6, 3, 1, 'ƒƒ“ƒs[ƒX') ;
-                
-
-#########y •ÒW z##########################################################################################
-#“Ç‚Ý‚½‚¢–{‚Ì’Ç‰Á
-INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (10, 1, 2, 'iŒ‚‚Ì‹l') 
+VALUES (6, 3, 1, 'ãƒ¯ãƒ³ãƒ”ãƒ¼ã‚¹') ;
 
 
-#“Ç‚Ý‚½‚¢–{‚Ìˆê——
+#########ã€ ç·¨é›† ã€‘##########################################################################################
+#èª­ã¿ãŸã„æœ¬ã®è¿½åŠ 
+INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
+VALUES (10, 1, 2, 'é€²æ’ƒã®å·¨äºº')
+
+
+#èª­ã¿ãŸã„æœ¬ã®ä¸€è¦§
 SELECT a.USER_NAME , c.BOOK_TITLE
   FROM (USER_TABLE a INNER JOIN BOOK_PLAN_TABLE b ON b.USER_ID = a.USER_ID)
-                     INNER JOIN BOOK_TABLE c ON b.BOOK_ID = c.BOOK_ID 
+                     INNER JOIN BOOK_TABLE c ON b.BOOK_ID = c.BOOK_ID
   WHERE b.USER_ID = 2
   AND b.READ_FLAG = 0
   AND b.DELETE_FLAG = 0
  ORDER BY b.BOOK_ID ;
- 
- 
-#Šù“Ç‚µ‚½–{‚Ìˆê——
+
+
+#æ—¢èª­ã—ãŸæœ¬ã®ä¸€è¦§
 SELECT a.USER_NAME , c.BOOK_TITLE
   FROM (USER_TABLE a INNER JOIN BOOK_PLAN_TABLE b ON b.USER_ID = a.USER_ID)
-                     INNER JOIN BOOK_TABLE c ON b.BOOK_ID = c.BOOK_ID 
+                     INNER JOIN BOOK_TABLE c ON b.BOOK_ID = c.BOOK_ID
   WHERE b.USER_ID = 1
   AND b.READ_FLAG = 1
   AND b.DELETE_FLAG = 0
  ORDER BY b.BOOK_ID ;
-  
- 
 
-#“Ç‚Ý‚½‚¢–{‚Ì•ÒW
+
+
+#èª­ã¿ãŸã„æœ¬ã®ç·¨é›†
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (11, 1, 2, 'iŒ‚‚Ì‹l') 
+VALUES (11, 1, 2, 'é€²æ’ƒã®å·¨äºº')
 
 UPDATE BOOK_PLAN_TABLE
-SET BOOK_TITLE = '•ÏXŒã‚Ìƒ^ƒCƒgƒ‹3',
+SET BOOK_TITLE = 'å¤‰æ›´å¾Œã®ã‚¿ã‚¤ãƒˆãƒ«3',
     DELETE_FLAG = 1
 WHERE USER_ID = 1
   AND BOOK_ID = 2;
 
 /*
 UPDATE BOOK_TABLE
-SET c.BOOK_TITLE = '•ÏXŒã‚Ìƒ^ƒCƒgƒ‹'
+SET c.BOOK_TITLE = 'å¤‰æ›´å¾Œã®ã‚¿ã‚¤ãƒˆãƒ«'
 FROM (USER_TABLE a INNER JOIN BOOK_PLAN_TABLE b ON b.USER_ID = a.USER_ID)
-                     INNER JOIN BOOK_TABLE c ON b.BOOK_ID = c.BOOK_ID 
+                     INNER JOIN BOOK_TABLE c ON b.BOOK_ID = c.BOOK_ID
 WHERE USER_ID = 1
   AND BOOK_ID = 1 ;
 ORDER BY b.BOOK_ID ;
 */
-  
-  
-#“Ç‚Ý‚½‚¢–{‚Ìíœ
+
+
+#èª­ã¿ãŸã„æœ¬ã®å‰Šé™¤
 UPDATE BOOK_PLAN_TABLE
 SET DELETE_FLAG = 1
 WHERE USER_ID = 1
@@ -119,15 +115,15 @@ WHERE USER_ID = 1
   AND DELETE_FLAG = 0 ;
 
 
-#“Ç‚Ý‚½‚¢–{‚ÌŠù“Ç
+#èª­ã¿ãŸã„æœ¬ã®æ—¢èª­
 UPDATE BOOK_PLAN_TABLE
 SET READ_FLAG = 1
 WHERE USER_ID = 1
   AND BOOK_ID = 2
   AND READ_FLAG = 0 ;
-  
-  
-#“Ç‚ñ‚¾–{‚ð–¢“Ç‚Ö
+
+
+#èª­ã‚“ã æœ¬ã‚’æœªèª­ã¸
 UPDATE BOOK_PLAN_TABLE
 SET READ_FLAG = 0
 WHERE USER_ID = 1
@@ -137,12 +133,12 @@ WHERE USER_ID = 1
 --DROP TABLE book_plan_table;
 
 
-#########y ‘Oˆ— z##########################################################################################
+#########ã€ å‰å‡¦ç† ã€‘##########################################################################################
 
-#—˜—pŽÒƒe[ƒuƒ‹
+#åˆ©ç”¨è€…ãƒ†ãƒ¼ãƒ–ãƒ«
 CREATE TABLE USER_TABLE (
-  USER_ID           INT(9)          NOT NULL PRIMARY KEY    COMMENT '—˜—pŽÒID',
-  USER_NAME         VARCHAR(100)    NOT NULL                COMMENT '—˜—pŽÒ–¼'                 
+  USER_ID           INT(9)          NOT NULL PRIMARY KEY    COMMENT 'åˆ©ç”¨è€…ID',
+  USER_NAME         VARCHAR(100)    NOT NULL                COMMENT 'åˆ©ç”¨è€…å'
 );
 INSERT INTO USER_TABLE (USER_ID , USER_NAME)
 VALUES (1, 'OI') ;
@@ -155,98 +151,98 @@ VALUES (4, 'HAYASHI') ;
 INSERT INTO USER_TABLE (USER_ID , USER_NAME)
 VALUES (5, 'MAMIYA') ;
 
-#–{ƒe[ƒuƒ‹
+#æœ¬ãƒ†ãƒ¼ãƒ–ãƒ«
 CREATE TABLE BOOK_TABLE (
-  BOOK_ID           INT(9)          NOT NULL PRIMARY KEY    COMMENT '–{ID',
-  BOOK_TITLE         VARCHAR(100)    NOT NULL                COMMENT '–{‚Ìƒ^ƒCƒgƒ‹'                 
+  BOOK_ID           INT(9)          NOT NULL PRIMARY KEY    COMMENT 'æœ¬ID',
+  BOOK_TITLE         VARCHAR(100)    NOT NULL                COMMENT 'æœ¬ã®ã‚¿ã‚¤ãƒˆãƒ«'
 );
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
-VALUES (1, 'ƒƒ“ƒs[ƒX') ;
+VALUES (1, 'ãƒ¯ãƒ³ãƒ”ãƒ¼ã‚¹') ;
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
-VALUES (2, 'ƒXƒpƒCƒtƒ@ƒ~ƒŠ[') ;
+VALUES (2, 'ã‚¹ãƒ‘ã‚¤ãƒ•ã‚¡ãƒŸãƒªãƒ¼') ;
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
-VALUES (3, 'ƒnƒŠ[ƒ|ƒbƒ^[‚ÆŒ«ŽÒ‚ÌÎ') ;
+VALUES (3, 'ãƒãƒªãƒ¼ãƒãƒƒã‚¿ãƒ¼ã¨è³¢è€…ã®çŸ³') ;
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
-VALUES (4, 'Java“ü–å') ;
+VALUES (4, 'Javaå…¥é–€') ;
 INSERT INTO BOOK_TABLE (BOOK_ID, BOOK_TITLE)
-VALUES (5, 'springbootŽQl‘') ;
+VALUES (5, 'springbootå‚è€ƒæ›¸') ;
 
 
-#–{“Ç—¹ó‹µƒe[ƒuƒ‹
+#æœ¬èª­äº†çŠ¶æ³ãƒ†ãƒ¼ãƒ–ãƒ«
 CREATE TABLE BOOK_PLAN_TABLE (
   ID                INT(9)           NOT NULL    COMMENT 'ID',
-  USER_ID           INT(9)           NOT NULL    COMMENT '—˜—pŽÒID',
-  BOOK_ID           INT(9)           NOT NULL    COMMENT '–{ID',
-  BOOK_TITLE        VARCHAR(100)     NOT NULL    COMMENT '–{‚Ìƒ^ƒCƒgƒ‹', 
-  READ_FLAG         INT(1)           DEFAULT 0   COMMENT 'Šù“Çƒtƒ‰ƒO',
-  DELETE_FLAG       INT(1)           DEFAULT 0   COMMENT 'íœƒtƒ‰ƒO',
-  PRIMARY KEY(ID, USER_ID, BOOK_ID)             
+  USER_ID           INT(9)           NOT NULL    COMMENT 'åˆ©ç”¨è€…ID',
+  BOOK_ID           INT(9)           NOT NULL    COMMENT 'æœ¬ID',
+  BOOK_TITLE        VARCHAR(100)     NOT NULL    COMMENT 'æœ¬ã®ã‚¿ã‚¤ãƒˆãƒ«',
+  READ_FLAG         INT(1)           DEFAULT 0   COMMENT 'æ—¢èª­ãƒ•ãƒ©ã‚°',
+  DELETE_FLAG       INT(1)           DEFAULT 0   COMMENT 'å‰Šé™¤ãƒ•ãƒ©ã‚°',
+  PRIMARY KEY(ID, USER_ID, BOOK_ID)
 );
 
-#ƒeƒXƒgƒf[ƒ^
+#ãƒ†ã‚¹ãƒˆãƒ‡ãƒ¼ã‚¿
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (1, 1, 1, 'ƒƒ“ƒs[ƒX') ;
+VALUES (1, 1, 1, 'ãƒ¯ãƒ³ãƒ”ãƒ¼ã‚¹') ;
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (2, 1, 2, 'ƒXƒpƒCƒtƒ@ƒ~ƒŠ[') ;
+VALUES (2, 1, 2, 'ã‚¹ãƒ‘ã‚¤ãƒ•ã‚¡ãƒŸãƒªãƒ¼') ;
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (3, 2, 1, 'ƒƒ“ƒs[ƒX') ;
+VALUES (3, 2, 1, 'ãƒ¯ãƒ³ãƒ”ãƒ¼ã‚¹') ;
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (4, 2, 2, 'ƒXƒpƒCƒtƒ@ƒ~ƒŠ[') ;
+VALUES (4, 2, 2, 'ã‚¹ãƒ‘ã‚¤ãƒ•ã‚¡ãƒŸãƒªãƒ¼') ;
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (5, 2, 4, 'Java“ü–å') ;
+VALUES (5, 2, 4, 'Javaå…¥é–€') ;
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (6, 3, 1, 'ƒƒ“ƒs[ƒX') ;
-                
-
-#########y •ÒW z##########################################################################################
-#“Ç‚Ý‚½‚¢–{‚Ì’Ç‰Á
-INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (10, 1, 2, 'iŒ‚‚Ì‹l') 
+VALUES (6, 3, 1, 'ãƒ¯ãƒ³ãƒ”ãƒ¼ã‚¹') ;
 
 
-#“Ç‚Ý‚½‚¢–{‚Ìˆê——
+#########ã€ ç·¨é›† ã€‘##########################################################################################
+#èª­ã¿ãŸã„æœ¬ã®è¿½åŠ 
+INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
+VALUES (10, 1, 2, 'é€²æ’ƒã®å·¨äºº')
+
+
+#èª­ã¿ãŸã„æœ¬ã®ä¸€è¦§
 SELECT a.USER_NAME , c.BOOK_TITLE
   FROM (USER_TABLE a INNER JOIN BOOK_PLAN_TABLE b ON b.USER_ID = a.USER_ID)
-                     INNER JOIN BOOK_TABLE c ON b.BOOK_ID = c.BOOK_ID 
+                     INNER JOIN BOOK_TABLE c ON b.BOOK_ID = c.BOOK_ID
   WHERE b.USER_ID = 2
   AND b.READ_FLAG = 0
   AND b.DELETE_FLAG = 0
  ORDER BY b.BOOK_ID ;
- 
- 
-#Šù“Ç‚µ‚½–{‚Ìˆê——
+
+
+#æ—¢èª­ã—ãŸæœ¬ã®ä¸€è¦§
 SELECT a.USER_NAME , c.BOOK_TITLE
   FROM (USER_TABLE a INNER JOIN BOOK_PLAN_TABLE b ON b.USER_ID = a.USER_ID)
-                     INNER JOIN BOOK_TABLE c ON b.BOOK_ID = c.BOOK_ID 
+                     INNER JOIN BOOK_TABLE c ON b.BOOK_ID = c.BOOK_ID
   WHERE b.USER_ID = 1
   AND b.READ_FLAG = 1
   AND b.DELETE_FLAG = 0
  ORDER BY b.BOOK_ID ;
-  
- 
 
-#“Ç‚Ý‚½‚¢–{‚Ì•ÒW
+
+
+#èª­ã¿ãŸã„æœ¬ã®ç·¨é›†
 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
-VALUES (11, 1, 2, 'iŒ‚‚Ì‹l') 
+VALUES (11, 1, 2, 'é€²æ’ƒã®å·¨äºº')
 
 UPDATE BOOK_PLAN_TABLE
-SET BOOK_TITLE = '•ÏXŒã‚Ìƒ^ƒCƒgƒ‹3',
+SET BOOK_TITLE = 'å¤‰æ›´å¾Œã®ã‚¿ã‚¤ãƒˆãƒ«3',
     DELETE_FLAG = 1
 WHERE USER_ID = 1
   AND BOOK_ID = 2;
 
 /*
 UPDATE BOOK_TABLE
-SET c.BOOK_TITLE = '•ÏXŒã‚Ìƒ^ƒCƒgƒ‹'
+SET c.BOOK_TITLE = 'å¤‰æ›´å¾Œã®ã‚¿ã‚¤ãƒˆãƒ«'
 FROM (USER_TABLE a INNER JOIN BOOK_PLAN_TABLE b ON b.USER_ID = a.USER_ID)
-                     INNER JOIN BOOK_TABLE c ON b.BOOK_ID = c.BOOK_ID 
+                     INNER JOIN BOOK_TABLE c ON b.BOOK_ID = c.BOOK_ID
 WHERE USER_ID = 1
   AND BOOK_ID = 1 ;
 ORDER BY b.BOOK_ID ;
 */
-  
-  
-#“Ç‚Ý‚½‚¢–{‚Ìíœ
+
+
+#èª­ã¿ãŸã„æœ¬ã®å‰Šé™¤
 UPDATE BOOK_PLAN_TABLE
 SET DELETE_FLAG = 1
 WHERE USER_ID = 1
@@ -254,15 +250,15 @@ WHERE USER_ID = 1
   AND DELETE_FLAG = 0 ;
 
 
-#“Ç‚Ý‚½‚¢–{‚ÌŠù“Ç
+#èª­ã¿ãŸã„æœ¬ã®æ—¢èª­
 UPDATE BOOK_PLAN_TABLE
 SET READ_FLAG = 1
 WHERE USER_ID = 1
   AND BOOK_ID = 2
   AND READ_FLAG = 0 ;
-  
-  
-#“Ç‚ñ‚¾–{‚ð–¢“Ç‚Ö
+
+
+#èª­ã‚“ã æœ¬ã‚’æœªèª­ã¸
 UPDATE BOOK_PLAN_TABLE
 SET READ_FLAG = 0
 WHERE USER_ID = 1
