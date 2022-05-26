@@ -43,6 +43,6 @@ public class BookController {
 		 Book book = bookService.lastPlanBookNum();
 		 bookUserEditRequest.last_id = book.id +1;
 		 bookService.addPlanBook(bookUserEditRequest);
-		return "deleteComplete";
+		return "add";
 	 }
 }
