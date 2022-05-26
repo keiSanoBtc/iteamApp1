@@ -31,6 +31,7 @@
         <!-- 読みたい本リスト -->
         <div class="yomitai_wrapper">
             <div class="yomitai_title">
+<<<<<<< HEAD
                 	<form th:action="@{/bookshelf}" th:object="${userSearchRequest}" th:method="post">
 						<div>
 							<input type="hidden" th:object="${user}" name="id" th:value="*{id}" />
@@ -42,6 +43,9 @@
             </div>
             <div class="yomitai_title">
                 <h2>読みたい本リスト</h2>
+=======
+                <button onclick="location.href='bookshelf'">本棚</button>
+>>>>>>> c05dca0 (user.htmlに本棚ボタンを実装)
             </div>
             <div class="yomitai_list">
                 <!-- to Springチーム：ここに読みたい本リストを挿入 -->
@@ -58,6 +62,7 @@
                         <tbody>
                             <tr th:each="book : ${userPlanBookList}">
                                 <td th:text="${book.book_name}"></td>
+<<<<<<< HEAD
                                 <td>
 				                	<form th:action="@{/edit}" th:object="${userPlanBookRequest}" th:method="post">
 								        <div>
@@ -85,6 +90,8 @@
 								        </div>
 								    </form>
 				                </td>
+=======
+>>>>>>> c05dca0 (user.htmlに本棚ボタンを実装)
                             </tr>
                         </tbody>
                     </table>
