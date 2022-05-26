@@ -54,4 +54,11 @@
 			  AND BOOK_ID = #{book_id}
 			  AND READ_FLAG = 0 ;
     </update>
+    <update id="midokuBook">
+    	UPDATE BOOK_PLAN_TABLE
+			SET READ_FLAG = 0
+			WHERE USER_ID = #{user_id}
+			  AND BOOK_ID = #{book_id}
+			  AND READ_FLAG = 1 ;
+    </update>
 </mapper>

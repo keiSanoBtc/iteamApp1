@@ -86,4 +86,15 @@ public class UserController {
         model.addAttribute("message", "既読しました。");
         return "kidokuComplete";
     }
+
+//  読みたい本を未読にする
+    @RequestMapping(value = "/midokuComplete", method = RequestMethod.POST)
+    public String midokuBook(@ModelAttribute UserPlanBookRequest userPlanBookRequest, Model model) {
+    	userService.midokuBook(userPlanBookRequest);
+    	System.out.println(userPlanBookRequest.user_id);
+    	System.out.println(userPlanBookRequest.book_id);
+        model.addAttribute("midokuMessage", "未読に変更しました。");
+        return "midokuComplete";
+    }
+
 }
