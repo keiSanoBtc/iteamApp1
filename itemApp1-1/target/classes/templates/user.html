@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>user</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/style.css">
-    <link rel="resetsheet" href="../static/reset.css">
-    <link rel="stylesheet" href="../static/user.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="resetsheet" href="./reset.css">
+    <link rel="stylesheet" href="./user.css">
 </head>
 <body>
     <!-- header -->
@@ -105,12 +105,22 @@
                         <thead>
                             <tr>
                             	<th>タイトル</th>
+                            	<th>編集</th>
                             	<th>未読に変更</th>
                             </tr>
                         </thead>
                         <tbody>
                         	<tr th:each="book : ${userPastBookList}">
                                 <td th:text="${book.book_name}"></td>
+                        		<td>
+				                	<form th:action="@{/edit}" th:object="${userPlanBookRequest}" th:method="post">
+								        <div>
+								        	<input type="hidden" th:object="${user}" name="user_id" th:value="*{id}" />
+								        	<input type="hidden"  name="book_id" th:value="${book.id}" />
+								            <input type="submit" value="編集"  />
+								        </div>
+								    </form>
+				                </td>
                         		<td>
 				               		<form th:action="@{/midokuComplete}" th:object="${userPlanBookRequest}" th:method="post">
 								        <div>
