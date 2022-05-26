@@ -31,7 +31,12 @@
         <!-- 読みたい本リスト -->
         <div class="yomitai_wrapper">
             <div class="yomitai_title">
-                <button id="btn_bookshelf" onclick="location.href='bookshelf'">本棚</button>
+                	<form th:action="@{/bookshelf}" th:object="${userSearchRequest}" th:method="post">
+						<div>
+							<input type="hidden" th:object="${user}" name="id" th:value="*{id}" />
+							<input type="submit" value="本棚"/>
+						</div>
+					</form>
                 <button id="btn_userSearch" onclick="location.href='userSearch'">ユーザー検索</button>
                 <button id="btn_index" onclick="location.href='index'">ホームに戻る</button>
             </div>
