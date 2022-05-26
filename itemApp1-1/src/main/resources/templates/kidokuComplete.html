@@ -18,5 +18,12 @@
     </div>
 
     <h1>既読しました</h1>
+    <form th:action="@{/user}" th:object="${userPlanBookRequestt}" th:method="post">
+    	<div>
+     		<input type="hidden" th:object="${user}" name="id" th:value="*{id}" />
+     		<input type="hidden" th:object="${user}" name="name" th:value="*{name}" />
+         	<input type="submit" value="積読リストに戻る"  />
+    	</div>
+	</form>
 </body>
 </html>

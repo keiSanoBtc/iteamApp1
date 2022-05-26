@@ -54,7 +54,9 @@ public class UserController {
 	 @RequestMapping(value = "/edit", method = RequestMethod.POST)
 	 public String editPlanBook(@ModelAttribute UserPlanBookRequest userPlanBookRequest, Model model) {
 		 UserPlanBook userPlanBook = userService.userPlanBookEdit(userPlanBookRequest);
+		 User user = userService.userDeleteSearch(userPlanBookRequest);
 		 model.addAttribute("userPlanBook", userPlanBook);
+		 model.addAttribute("user", user);
 		 return "edit";
 	    }
 
@@ -62,7 +64,9 @@ public class UserController {
 //  読みたい本の編集完了
 	@RequestMapping(value = "/editComplete", method = RequestMethod.POST)
 	 public String editPlanBookComplete(@ModelAttribute UserPlanBookEditRequest userPlanBookEditRequest, Model model) {
+		User user = userService.userEditSearch(userPlanBookEditRequest);
 		userService.userPlanBookEditComplete(userPlanBookEditRequest);
+		model.addAttribute("user", user);
 		return "editComplete";
 	}
 
@@ -70,30 +74,36 @@ public class UserController {
 //  読みたい本の削除
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public String deletePlanBook(@ModelAttribute UserPlanBookRequest userPlanBookRequest, Model model) {
+    	User user = userService.userDeleteSearch(userPlanBookRequest);
     	userService.deletePlanBook(userPlanBookRequest);
     	System.out.println(userPlanBookRequest.user_id);
     	System.out.println(userPlanBookRequest.book_id);
         model.addAttribute("deleteMessage", "削除しました。");
+        model.addAttribute("user", user);
         return "deleteComplete";
     }
 
 //  読みたい本を既読する
     @RequestMapping(value = "/kidokuComplete", method = RequestMethod.POST)
     public String postBook(@ModelAttribute UserPlanBookRequest userPlanBookRequest, Model model) {
+    	User user = userService.userDeleteSearch(userPlanBookRequest);
     	userService.postBook(userPlanBookRequest);
     	System.out.println(userPlanBookRequest.user_id);
     	System.out.println(userPlanBookRequest.book_id);
         model.addAttribute("message", "既読しました。");
+        model.addAttribute("user", user);
         return "kidokuComplete";
     }
 
 //  読みたい本を未読にする
     @RequestMapping(value = "/midokuComplete", method = RequestMethod.POST)
     public String midokuBook(@ModelAttribute UserPlanBookRequest userPlanBookRequest, Model model) {
+    	User user = userService.userDeleteSearch(userPlanBookRequest);
     	userService.midokuBook(userPlanBookRequest);
     	System.out.println(userPlanBookRequest.user_id);
     	System.out.println(userPlanBookRequest.book_id);
         model.addAttribute("midokuMessage", "未読に変更しました。");
+        model.addAttribute("user", user);
         return "midokuComplete";
     }
 

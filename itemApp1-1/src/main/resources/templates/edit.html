@@ -23,6 +23,8 @@
 	            新しい名前：<input type="text" name="book_name" />
 	           	<input type="hidden" th:object="${userPlanBook}" name="user_id" th:value="*{user_id}" />
 	           	<input type="hidden" th:object="${userPlanBook}" name="book_id" th:value="*{book_id}" />
+	           	<input type="hidden" th:object="${user}" name="id" th:value="*{id}" />
+     			<input type="hidden" th:object="${user}" name="name" th:value="*{name}" />
 	            <input type="submit" value="編集完了" />
    		</form>
     </main>
