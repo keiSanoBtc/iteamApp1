@@ -1,17 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="resetsheet" href="./reset.css">
+    <link rel="stylesheet" href="./add.css">
 </head>
 <body>
+   <!-- header -->
+    <header>
+        <div class="header_wrapper">
+            <img src="https://bigtreecapital.sharepoint.com/_api/v2.1/sites/bigtreecapital.sharepoint.com,1d425791-f95e-4d1b-912b-ed50d30972b5,efe966ac-4c61-4ed7-9808-a8273285b53c/lists/54842f71-e357-4e66-9d30-2d4c5a788492/items/221a5c7a-9cbe-4a69-b427-79231d8ff4c8/driveItem/thumbnails/0/c2560x99999/content?preferNoRedirect=true&prefer=extendCacheMaxAge&clientType=modernWebPart" alt="topimg" class="header_image mw-100" onclick="location.href='index'">
+            <p class="header_text text-light display-1">reading list</p>
+        </div>
+    </header>
 	<p>読みたい本リストに追加しました。</p>
-	<button class="btn" id="back_to_index" onclick="location.href='index'">ホームに戻る</button>
+	<button class="btn btn-outline-success" id="back_to_index" onclick="location.href='index'">ホームに戻る</button>
     <form th:action="@{/user}" th:object="${userSearchRequest}" th:method="post">
     	<div>
      		<input type="hidden" th:object="${user}" name="id" th:value="*{id}" />
      		<input type="hidden" th:object="${user}" name="name" th:value="*{name}" />
-         	<input type="submit" value="積読リストに戻る"  />
+        <input type="submit" value="積読リストに戻る"  />
     	</div>
 	</form>
 </body>

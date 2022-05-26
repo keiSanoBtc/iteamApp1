@@ -129,7 +129,7 @@ SET READ_FLAG = 0
 WHERE USER_ID = 1
   AND BOOK_ID = 2
   AND READ_FLAG = 1 ;
-=======
+
 --DROP TABLE book_plan_table;
 
 
