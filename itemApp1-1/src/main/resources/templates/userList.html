@@ -26,26 +26,22 @@
     </div>
 
     <table>
-    
+
     <!-- 編集中 -->
-    <tbody>
-    	<tbody th:each="book : ${allBookList}">
-    		<td th:text="${book.book_name}"></td>
-    		<td><button onclick="location.href='edit'">編集</button></td>
-    		<td><button>追加</button></td>
-    		</tr>
-            </tbody>
-    <!-- 編集中 -->
-        <thead>
+    <thead>
             <tr>
                 <th>名前</th>
+                <th>読んだ本の数</th>
             </tr>
         </thead>
-        <tbody>
-            <tr th:each="user : ${userList}" th:object="${userList}">
-                <td th:text="${user.name}"></td>
-            </tr>
+    <tbody>
+    	<tbody th:each="user : ${userList}">
+    		<tr>
+    			<td th:text="${user.userName}"></td>
+    			<td th:text="${user.kidokuBookNum}"></td>
+    		</tr>
         </tbody>
+    <!-- 編集中 -->
     </table>
 </body>
 </html>

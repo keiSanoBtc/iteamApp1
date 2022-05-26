@@ -86,18 +86,4 @@ public class UserController {
         model.addAttribute("message", "既読しました。");
         return "kidokuComplete";
     }
-
-//  ユーザ一覧を表示（テスト）
-    @RequestMapping(value = "/userList", method = RequestMethod.GET)
-    public String userList(Model model) {
-//    	List<User> userList = new ArrayList<User>();
-//    	User user1 = new User();
-//    	User user2 = new User();
-//    	user1.name = "佐野";
-//    	user2.name = "大井";
-//    	userList.add(user1);
-//    	userList.add(user2);
-//    	model.addAttribute("userList", userList);
-        return "userList";
-    }
 }
