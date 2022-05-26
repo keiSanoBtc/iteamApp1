@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.example.demo.dto.BookUserEditRequest;
 import com.example.demo.dto.UserSearchRequest;
 import com.example.demo.entity.Book;
+import com.example.demo.entity.User;
 import com.example.demo.repository.BookMapper;;
 
 @Service
@@ -33,5 +34,11 @@ public class BookService {
     	return bookMapper.lastPlanBookNum();
 
     }
-    
+
+    public User userSearch(BookUserEditRequest bookUserEditRequest) {
+
+    	return bookMapper.userSearch(bookUserEditRequest);
+
+    }
+
 }

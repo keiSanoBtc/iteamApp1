@@ -42,7 +42,11 @@ public class BookController {
 	 public String addPlanBook(@ModelAttribute BookUserEditRequest bookUserEditRequest, Model model) {
 		 Book book = bookService.lastPlanBookNum();
 		 bookUserEditRequest.last_id = book.id +1;
+		 User user = bookService.userSearch(bookUserEditRequest);
+		 System.out.println(bookUserEditRequest.user_id);
+		 System.out.println(bookUserEditRequest.book_name);
 		 bookService.addPlanBook(bookUserEditRequest);
+		 model.addAttribute("user", user);
 		return "add";
 	 }
 }
