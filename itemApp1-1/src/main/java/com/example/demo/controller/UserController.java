@@ -36,11 +36,13 @@ public class UserController {
 	 public String userSearch(@ModelAttribute UserSearchRequest userSearchRequest, Model model){
 //		 System.out.println(userSearchRequest);
 		 List<Book> userPlanBookList = userService.userPlanBookList(userSearchRequest);
+		 List<Book> userPastBookList = userService.userPastBookList(userSearchRequest);
 		 User user = userService.userSearch(userSearchRequest);
 //		 System.out.println(userSearchRequest.name);
 //		 System.out.println(user);
 //		 System.out.println(userPlanBookList);
 		 model.addAttribute("user", user);
+		 model.addAttribute("userPastBookList", userPastBookList);
 		 model.addAttribute("userPlanBookList", userPlanBookList);
 	     return "user";
 	 }

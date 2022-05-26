@@ -61,6 +61,19 @@
             </div>
             <div class="kidoku_list">
                 <!-- to Springチーム：ここに読んだ本リストを挿入してください  -->
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="book : ${userPastBookList}">
+                                <td th:text="${book.book_name}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         <!-- 読んだ本リスト -->

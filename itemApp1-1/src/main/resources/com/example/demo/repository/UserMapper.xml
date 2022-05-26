@@ -16,7 +16,13 @@
 		 ORDER BY b.BOOK_ID ;
     </select>
     <select id="userPastBookList" resultType="com.example.demo.entity.Book">
-
+    	SELECT c.BOOK_ID , c.BOOK_TITLE
+		  FROM (USER_TABLE a INNER JOIN BOOK_PLAN_TABLE b ON b.USER_ID = a.USER_ID)
+		                     INNER JOIN BOOK_TABLE c ON b.BOOK_ID = c.BOOK_ID
+		  WHERE a.USER_NAME = #{name}
+		  AND b.READ_FLAG = 1
+		  AND b.DELETE_FLAG = 0
+		 ORDER BY b.BOOK_ID ;
     </select>
     <delete id="deletePlanBook">
 

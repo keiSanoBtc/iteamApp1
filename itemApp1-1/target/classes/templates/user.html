@@ -57,7 +57,24 @@
                 <h2>読んだ本リスト</h2>
             </div>
             <div class="kidoku_list">
+<<<<<<< HEAD
                 <!-- to Springチーム：ここに読んだ本リストを挿入してください -->
+=======
+                <!-- to Springチーム：ここに読んだ本リストを挿入してください  -->
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="book : ${userPastBookList}">
+                                <td th:text="${book.book_name}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+>>>>>>> 8c96c31 (見た本一覧を表示)
             </div>
         </div>
         <!-- 読んだ本リスト -->
