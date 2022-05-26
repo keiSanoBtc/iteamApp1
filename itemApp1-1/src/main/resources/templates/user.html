@@ -33,6 +33,9 @@
             <div class="yomitai_title">
                 <button onclick="location.href='bookshelf'">本棚</button>
             </div>
+            <div class="yomitai_title">
+                <h2>読みたい本リスト</h2>
+            </div>
             <div class="yomitai_list">
                 <!-- to Springチーム：ここに読みたい本リストを挿入 -->
                 <h2>本棚</h2>
@@ -40,12 +43,42 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>読みたい本リスト</th>
+                            	<th>タイトル</th>
+                            	<th>編集</th>
+                            	<th>既読</th>
+                                <th>削除</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr th:each="book : ${userPlanBookList}">
                                 <td th:text="${book.book_name}"></td>
+                                <td>
+				                	<form th:action="@{/edit}" th:object="${userPlanBookRequest}" th:method="post">
+								        <div>
+								        	<input type="hidden" th:object="${user}" name="user_id" th:value="*{id}" />
+								        	<input type="hidden"  name="book_id" th:value="${book.id}" />
+								            <input type="submit" value="編集"  />
+								        </div>
+								    </form>
+				                </td>
+                                <td>
+				                	<form th:action="@{/kidokuComplete}" th:object="${userPlanBookRequest}" th:method="post">
+								        <div>
+								        	<input type="hidden" th:object="${user}" name="user_id" th:value="*{id}" />
+								        	<input type="hidden"  name="book_id" th:value="${book.id}" />
+								            <input type="submit" value="既読"  />
+								        </div>
+								    </form>
+				                </td>
+                                <td>
+				                	<form th:action="@{/delete}" th:object="${userPlanBookRequest}" th:method="post">
+								        <div>
+								        	<input type="hidden" th:object="${user}" name="user_id" th:value="*{id}" />
+								        	<input type="hidden"  name="book_id" th:value="${book.id}" />
+								            <input type="submit" value="削除"  />
+								        </div>
+								    </form>
+				                </td>
                             </tr>
                         </tbody>
                     </table>
