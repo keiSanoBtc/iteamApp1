@@ -40,6 +40,7 @@
 			WHERE USER_ID = #{user_id}
 			  AND BOOK_ID = #{book_id};
     </update>
+
     <update id="deletePlanBook">
     	UPDATE BOOK_PLAN_TABLE
 			SET DELETE_FLAG = 1

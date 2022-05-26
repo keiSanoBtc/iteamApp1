@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>boodshelf</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/style.css">
-    <link rel="resetsheet" href="../static/reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="resetsheet" href="./reset.css">
 </head>
 <body>
     <!-- header -->
@@ -23,10 +23,16 @@
     <!-- main -->
     <main>
         <h1>本棚</h1>
+
+        <div>
+        	<button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userList'">利用者一覧を見る</button>
+            <button type="button" class="btn col btn-outline-success" id="back_to_index" onclick="location.href='index'">ホームに戻る</button>
+        </div>
+
         <table>
             <thead>
                 <tr>
-                    <th class="display-1">本の題名</th>
+                    <th>本の題名</th>
                     <th>読みたい本リストに追加</th>
                 </tr>
             </thead>
