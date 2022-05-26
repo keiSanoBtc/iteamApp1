@@ -55,4 +55,12 @@ public class UserService {
     public void midokuBook(UserPlanBookRequest userPlanBookRequst) {
     	userMapper.midokuBook(userPlanBookRequst);
     }
+
+    public User userDeleteSearch(UserPlanBookRequest userPlanBookRequst) {
+    	return userMapper.userDeleteSearch(userPlanBookRequst);
+    }
+
+    public User userEditSearch(UserPlanBookEditRequest userPlanBookEditRequest) {
+    	return userMapper.userEditSearch(userPlanBookEditRequest);
+    }
 }

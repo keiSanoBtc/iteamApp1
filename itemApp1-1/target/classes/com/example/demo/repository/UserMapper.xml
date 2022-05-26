@@ -61,4 +61,10 @@
 			  AND BOOK_ID = #{book_id}
 			  AND READ_FLAG = 1 ;
     </update>
+    <select id="userDeleteSearch" resultType="com.example.demo.entity.User">
+    	 SELECT USER_ID, USER_NAME FROM USER_TABLE WHERE USER_ID = #{user_id};
+    </select>
+    <select id="userEditSearch" resultType="com.example.demo.entity.User">
+    	 SELECT USER_ID, USER_NAME FROM USER_TABLE WHERE USER_ID = #{user_id};
+    </select>
 </mapper>

@@ -19,6 +19,10 @@ public interface UserMapper {
 
 	User userSearchById(UserSearchRequest user);
 
+	User userDeleteSearch(UserPlanBookRequest userPlanBookRequest);
+
+	User userEditSearch(UserPlanBookEditRequest userPlanBookEditRequest);
+
     List<Book> userPlanBookList(UserSearchRequest user);
 
     List<Book> userPastBookList(UserSearchRequest user);
@@ -32,5 +36,7 @@ public interface UserMapper {
     void postBook(UserPlanBookRequest user);
 
     void midokuBook(UserPlanBookRequest user);
+
+
 
 }
