@@ -16,7 +16,7 @@
         </div>
     </header>
     <!-- header -->
-    
+
     <h1>ユーザー情報一覧</h1>
 
     <div class="yomitai_title">
@@ -34,12 +34,11 @@
                 <th>読んだ本の数</th>
             </tr>
         </thead>
-    <tbody>
-    	<tbody th:each="user : ${userList}">
-    		<tr>
-    			<td th:text="${user.userName}"></td>
-    			<td th:text="${user.kidokuBookNum}"></td>
-    		</tr>
+        <tbody>
+            <tr th:each="user : ${userList}" th:object="${userList}">
+                <td th:text="${user.userName}"></td>
+                <td th:text="${user.kidokuBookNum}"></td>
+            </tr>
         </tbody>
     <!-- 編集中 -->
     </table>
