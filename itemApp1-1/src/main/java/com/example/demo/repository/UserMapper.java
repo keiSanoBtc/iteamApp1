@@ -17,6 +17,8 @@ public interface UserMapper {
 
 	User userSearch(UserSearchRequest user);
 
+	User userSearchById(UserSearchRequest user);
+
     List<Book> userPlanBookList(UserSearchRequest user);
 
     List<Book> userPastBookList(UserSearchRequest user);
