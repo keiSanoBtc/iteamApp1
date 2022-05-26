@@ -33,11 +33,13 @@
         <div id="userSearch_wrapper" class="form-group">
             <form th:action="@{/user}" th:object="${userSearchRequest}"
                 th:method="post">
-                <div>
-                    <p class="d-inline">名前：</p>
-                    <input type="text" class="d-inline" name="name" />
-                    <input type="submit" class="d-inline btn btn-outline-success" value="検索" />
-                </div>
+                <table>
+                    <tr>
+                        <th><label>ID：</labe></th>
+                        <td><input type="text" class="form-control" name="name" /></td>
+                        <td><input type="submit" class="btn btn-outline-success" value="検索" /></td>
+                    </tr>
+                </table>
             </form>
         </div>
     </main>

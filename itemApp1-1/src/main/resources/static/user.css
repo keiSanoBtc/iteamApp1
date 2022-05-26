@@ -1,1 +1,17 @@
 @charset "UTF-8";
+.yomitai_wrapper {
+    margin: auto;
+}
+
+table {
+    margin: auto;
+}
+
+.yomitai_title p {
+    margin: auto;
+}
+
+.yomitai_list th {
+    font-weight: normal;
+    font-size: smaller;
+}

@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>boodshelf</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/style.css">
-    <link rel="resetsheet" href="../static/reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="resetsheet" href="./reset.css">
+    <link rel="stylesheet" href="./bookshelf.css">
 </head>
 <body>
     <!-- header -->
@@ -22,11 +23,11 @@
 
     <!-- main -->
     <main>
-        <h1>本棚</h1>
-        <table>
+        <h1 id="bookshelf_title">本棚</h1>
+        <table class="table">
             <thead>
                 <tr>
-                    <th class="display-1">本の題名</th>
+                    <th>本の題名</th>
                     <th>読みたい本リストに追加</th>
                 </tr>
             </thead>
@@ -40,7 +41,7 @@
 								<input type="hidden" th:object="${user}" name="user_id" th:value="*{id}" />
 								<input type="hidden"  name="book_id" th:value="${book.id}" />
 								<input type="hidden"  name="book_name" th:value="${book.book_name}" />
-								<input type="submit" value="追加"  />
+								<input type="submit" class="btn btn-outline-success"  value="追加"  />
 							</div>
 						</form>
 				    </td>

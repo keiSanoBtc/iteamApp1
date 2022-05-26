@@ -44,9 +44,9 @@ body{
 /* ------ header ------ */
 
 /* ------- main ------ */
-/* .btns_wrapper {
-    margin: 30px 50px;
-} */
+.btns_wrapper {
+    margin: 30px 100px;
+}
 
 .btn {
     margin: 15px;
@@ -65,8 +65,21 @@ body{
     --bs-gradient: none;
 }
 
-.table {
+table {
     width: auto;
     margin: auto;
+}
+
+.title {
+    margin: 30px 50px;
+}
+
+.title p {
+    text-align: center;
+}
+
+th {
+    font-weight: normal;
+    font-size: smaller;
 }
 /* ------- main ------ */

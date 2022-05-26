@@ -13,14 +13,9 @@
 </head>
 <body>
     <!-- header -->
-
-    <!-- <header>
-        <h1 class="header_title" th:object="${user}"><span th:text="*{name}"></span>の積読リスト</h1>
-    </header> -->
-
     <header>
         <div class="header_wrapper">
-            <img src="../static/image/image.jfif" alt="topimg" class="header_image mw-100" onclick="location.href='index'">
+            <img src="https://bigtreecapital.sharepoint.com/_api/v2.1/sites/bigtreecapital.sharepoint.com,1d425791-f95e-4d1b-912b-ed50d30972b5,efe966ac-4c61-4ed7-9808-a8273285b53c/lists/54842f71-e357-4e66-9d30-2d4c5a788492/items/221a5c7a-9cbe-4a69-b427-79231d8ff4c8/driveItem/thumbnails/0/c2560x99999/content?preferNoRedirect=true&prefer=extendCacheMaxAge&clientType=modernWebPart" alt="topimg" class="header_image mw-100" onclick="location.href='index'">
             <p class="header_text text-light display-1">reading list</p>
         </div>
     </header>
@@ -28,21 +23,30 @@
 
     <!-- main -->
     <main>
+        <div class="btns_wrapper row">
+            	<!-- <form th:action="@{/bookshelf}" th:object="${userSearchRequest}" th:method="post" class="col">
+						<input type="hidden" th:object="${user}" name="id" th:value="*{id}" />
+						<input type="submit" class="btn btn-outline-success" value="本棚"/>
+				</form> -->
+            <button id="btn_userSearch" class="btn col btn-outline-success" onclick="location.href='userSearch'">ユーザー検索</button>
+            <button id="btn_index" class="btn col btn-outline-success" onclick="location.href='index'">ホームに戻る</button>
+        </div>
         <!-- 読みたい本リスト -->
         <div class="yomitai_wrapper">
-            <div class="yomitai_title">
-                	<form th:action="@{/bookshelf}" th:object="${userSearchRequest}" th:method="post">
-						<div>
-							<input type="hidden" th:object="${user}" name="id" th:value="*{id}" />
-							<input type="submit" value="本棚"/>
-						</div>
-					</form>
-                <button id="btn_userSearch" onclick="location.href='userSearch'">ユーザー検索</button>
-                <button id="btn_index" onclick="location.href='index'">ホームに戻る</button>
+            <div class="title yomitai_title">
+                <table>
+                    <tr>
+                        <td><p>読みたい本リスト</p></td>
+                        <td>
+                            <form th:action="@{/bookshelf}" th:object="${userSearchRequest}" th:method="post" class="col">
+                                <input type="hidden" th:object="${user}" name="id" th:value="*{id}" />
+                                <input type="submit" class="btn btn-outline-success" value="本棚"/>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
             </div>
-            <div class="yomitai_title">
-                <h2>読みたい本リスト</h2>
-            </div>
+
             <div class="yomitai_list">
                 <!-- to Springチーム：ここに読みたい本リストを挿入 -->
                 <div>
@@ -63,7 +67,7 @@
 								        <div>
 								        	<input type="hidden" th:object="${user}" name="user_id" th:value="*{id}" />
 								        	<input type="hidden"  name="book_id" th:value="${book.id}" />
-								            <input type="submit" value="編集"  />
+								            <input type="submit" class="btn btn-outline-success" value="編集"  />
 								        </div>
 								    </form>
 				                </td>
@@ -72,7 +76,7 @@
 								        <div>
 								        	<input type="hidden" th:object="${user}" name="user_id" th:value="*{id}" />
 								        	<input type="hidden"  name="book_id" th:value="${book.id}" />
-								            <input type="submit" value="既読"  />
+								            <input type="submit" class="btn btn-outline-success" value="既読"  />
 								        </div>
 								    </form>
 				                </td>
@@ -81,7 +85,7 @@
 								        <div>
 								        	<input type="hidden" th:object="${user}" name="user_id" th:value="*{id}" />
 								        	<input type="hidden"  name="book_id" th:value="${book.id}" />
-								            <input type="submit" value="削除"  />
+								            <input type="submit" class="btn btn-outline-success" value="削除"  />
 								        </div>
 								    </form>
 				                </td>
@@ -95,8 +99,8 @@
 
         <!-- 読んだ本リスト -->
         <div class="kidoku_wrapper">
-            <div class="kidoku_title">
-                <h2>読んだ本リスト</h2>
+            <div class="title kidoku_title">
+                <p>読んだ本リスト</p>
             </div>
             <div class="kidoku_list">
                 <!-- to Springチーム：ここに読んだ本リストを挿入してください  -->
