@@ -4,10 +4,10 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.repository.BookMapper">
     <select id="bookSearchedList" resultType="com.example.demo.entity.Book">
-		 select * from book_table;
+		 SELECT * FROM BOOK_TABLE;
     </select>
     <select id="lastPlanBookNum" resultType="com.example.demo.entity.Book">
-    	 select id, book_title from book_plan_table ORDER BY ID DESC LIMIT 1;
+    	 SELECT id, book_title from book_plan_table ORDER BY ID DESC LIMIT 1;
     </select>
     <insert id="addPlanBook" >
 		 INSERT INTO BOOK_PLAN_TABLE (ID, USER_ID, BOOK_ID, BOOK_TITLE)
