@@ -4,11 +4,11 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.example.demo.entity.Book;
+import com.example.demo.entity.UserList;
 
 @Mapper
-public interface BookMapper {
+public interface UserListMapper {
 
-	List<Book> bookSearchedList();
-
+	List<UserList> userList();
+	
 }

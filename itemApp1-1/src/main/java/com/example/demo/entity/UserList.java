@@ -5,10 +5,10 @@ import lombok.Data;
 
 @AllArgsConstructor
 @Data
-public class User {
+public class UserList{
 
-    public Long id;
+	public String userName;
 
-    public String name;
+	public Long kidokuBookNum;
 
 }
