@@ -8,11 +8,12 @@ body{
     position: relative;
     display:inline-block;
     width: 100%;
+    height: 200px;
 }
 
 .header_image {
     width: 100%;
-    height: 500px;
+    height: 100%;
     object-fit: cover;
     object-position: 100% 20%;
     filter: contrast(30%);
@@ -21,12 +22,6 @@ body{
 .header_image:hover {
     cursor: pointer;
 }
-
-.header_image {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    object-position: 100% 20%;}
 
 .header_text {
     position: absolute;
@@ -44,6 +39,9 @@ body{
 /* ------ header ------ */
 
 /* ------- main ------ */
+main {
+    margin: 30px 50px;
+}
 .btns_wrapper {
     margin: 30px 100px;
 }
@@ -79,7 +77,17 @@ table {
 }
 
 th {
+    text-align: center;
     font-weight: normal;
     font-size: smaller;
+}
+
+td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.tsundoku_back {
+    width: 100%;
 }
 /* ------- main ------ */

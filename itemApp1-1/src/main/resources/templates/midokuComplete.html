@@ -12,20 +12,49 @@
 </head>
 
 <body>
+    <!-- header -->
+    <header>
+        <div class="header_wrapper">
+            <img src="./image/image.jfif" alt="topimg" class="header_image mw-100" onclick="location.href='index'">
+            <p class="header_text text-light display-1">reading list</p>
+        </div>
+    </header>
+    <!-- header -->
+
+    <!-- main -->
     <!-- <h1>未読に変更しました</h1>
 
 	<div class="row btns_wrapper">
 		<button type="button" class="btn col btn-outline-success" id="btn_userSearch" onclick="location.href='userSearch'">ユーザー名から検索する</button>
         <button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userList'">利用者一覧を見る</button>
     </div> -->
+    <div class="title">
+        <p>未読に変更しました</p>
+    </div>
 
-    <h1>未読に変更しました</h1>
-    <form th:action="@{/user}" th:object="${userPlanBookRequestt}" th:method="post">
+    <!-- <form th:action="@{/user}" th:object="${userPlanBookRequestt}" th:method="post">
     	<div>
      		<input type="hidden" th:object="${user}" name="id" th:value="*{id}" />
      		<input type="hidden" th:object="${user}" name="name" th:value="*{name}" />
          	<input type="submit" value="積読リストに戻る"  />
     	</div>
-	</form>
+	</form> -->
+
+    <div class="row btns_wrapper">
+        <button class="btn col btn-outline-success" id="delete_complete" onclick="location.href='index'">ホームに戻る</button>
+
+        <form th:action="@{/user}" th:object="${userPlanBookRequestt}" th:method="post" class="col">
+	    	<div>
+	     		<input type="hidden" th:object="${user}" name="id" th:value="*{id}" />
+	     		<input type="hidden" th:object="${user}" name="name" th:value="*{name}" />
+	         	<input type="submit" class="btn btn-outline-success tsundoku_back" value="積読リストに戻る"  />
+	    	</div>
+		</form>
+    </div>
+    <!-- main -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 </body>
 </html>

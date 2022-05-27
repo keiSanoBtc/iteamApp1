@@ -1,5 +1,5 @@
 @charset "UTF-8";
-#bookshelf_title {
-    margin: 30px 50px;
+td {
     text-align: center;
+    vertical-align: middle;
 }
