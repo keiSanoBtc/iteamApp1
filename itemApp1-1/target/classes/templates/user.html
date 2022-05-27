@@ -25,6 +25,17 @@
 
     <!-- main -->
     <main>
+        <!-- btns_wrapper -->
+        <div class="btns_wrapper row">
+                <!-- <form th:action="@{/bookshelf}" th:object="${userSearchRequest}" th:method="post" class="col">
+                        <input type="hidden" th:object="${user}" name="id" th:value="*{id}" />
+                        <input type="submit" class="btn btn-outline-success" value="本棚"/>
+                </form> -->
+            <button id="btn_userSearch" class="btn col btn-outline-success" onclick="location.href='userSearch'">ユーザー検索</button>
+            <button id="btn_index" class="btn col btn-outline-success" onclick="location.href='index'">ホームに戻る</button>
+        </div>
+        <!-- btns_wrapper -->
+
         
         <!-- 読みたい本リスト -->
         <div class="yomitai_wrapper">
@@ -148,23 +159,9 @@
         </div>
         <!-- 読んだ本リスト -->
 
-        <!-- btns_wrapper -->
-        <div class="btns_wrapper row">
-                <!-- <form th:action="@{/bookshelf}" th:object="${userSearchRequest}" th:method="post" class="col">
-                        <input type="hidden" th:object="${user}" name="id" th:value="*{id}" />
-                        <input type="submit" class="btn btn-outline-success" value="本棚"/>
-                </form> -->
-            <button id="btn_userSearch" class="btn col btn-outline-success" onclick="location.href='userSearch'">ユーザー検索</button>
-            <button id="btn_index" class="btn col btn-outline-success" onclick="location.href='index'">ホームに戻る</button>
-        </div>
-        <!-- btns_wrapper -->
-
+        
     </main>
     <!-- main -->
-
-    <script>
-        // JavaScriptを記述する
-    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
