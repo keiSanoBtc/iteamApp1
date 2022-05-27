@@ -37,13 +37,9 @@ public class UserController {
 //	 利用者ごとのページを表示
 	 @RequestMapping(value = "/user", method = RequestMethod.POST)
 	 public String userSearch(@ModelAttribute UserSearchRequest userSearchRequest, Model model){
-//		 System.out.println(userSearchRequest);
+		 User user = userService.userSearch(userSearchRequest);
 		 List<Book> userPlanBookList = userService.userPlanBookList(userSearchRequest);
 		 List<Book> userPastBookList = userService.userPastBookList(userSearchRequest);
-		 User user = userService.userSearch(userSearchRequest);
-//		 System.out.println(userSearchRequest.name);
-//		 System.out.println(user);
-//		 System.out.println(userPlanBookList);
 		 model.addAttribute("user", user);
 		 model.addAttribute("userPastBookList", userPastBookList);
 		 model.addAttribute("userPlanBookList", userPlanBookList);
@@ -76,8 +72,6 @@ public class UserController {
     public String deletePlanBook(@ModelAttribute UserPlanBookRequest userPlanBookRequest, Model model) {
     	User user = userService.userDeleteSearch(userPlanBookRequest);
     	userService.deletePlanBook(userPlanBookRequest);
-    	System.out.println(userPlanBookRequest.user_id);
-    	System.out.println(userPlanBookRequest.book_id);
         model.addAttribute("deleteMessage", "削除しました。");
         model.addAttribute("user", user);
         return "deleteComplete";
@@ -88,8 +82,6 @@ public class UserController {
     public String postBook(@ModelAttribute UserPlanBookRequest userPlanBookRequest, Model model) {
     	User user = userService.userDeleteSearch(userPlanBookRequest);
     	userService.postBook(userPlanBookRequest);
-    	System.out.println(userPlanBookRequest.user_id);
-    	System.out.println(userPlanBookRequest.book_id);
         model.addAttribute("message", "既読しました。");
         model.addAttribute("user", user);
         return "kidokuComplete";
@@ -100,8 +92,6 @@ public class UserController {
     public String midokuBook(@ModelAttribute UserPlanBookRequest userPlanBookRequest, Model model) {
     	User user = userService.userDeleteSearch(userPlanBookRequest);
     	userService.midokuBook(userPlanBookRequest);
-    	System.out.println(userPlanBookRequest.user_id);
-    	System.out.println(userPlanBookRequest.book_id);
         model.addAttribute("midokuMessage", "未読に変更しました。");
         model.addAttribute("user", user);
         return "midokuComplete";

@@ -31,7 +31,6 @@ public class BookController {
 	 public String bookShelf(@ModelAttribute UserSearchRequest userSearchRequest, Model model) {
 		 User user = userService.userSearchById(userSearchRequest);
 		 List<Book> myNotReadBookList = bookService.bookSearch(userSearchRequest);
-		 System.out.println(user.id);
 		 model.addAttribute("user", user);
 		 model.addAttribute("myNotReadBookList", myNotReadBookList);
 		return "bookshelf";
@@ -43,8 +42,6 @@ public class BookController {
 		 Book book = bookService.lastPlanBookNum();
 		 bookUserEditRequest.last_id = book.id +1;
 		 User user = bookService.userSearch(bookUserEditRequest);
-		 System.out.println(bookUserEditRequest.user_id);
-		 System.out.println(bookUserEditRequest.book_name);
 		 bookService.addPlanBook(bookUserEditRequest);
 		 model.addAttribute("user", user);
 
