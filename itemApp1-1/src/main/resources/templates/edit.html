@@ -9,7 +9,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
     <link rel="resetsheet" href="./reset.css">
-    <link rel="stylesheet" href="./edit.css">
 </head>
 <body>
     <!-- header -->
@@ -27,7 +26,7 @@
 
 
     <div class="title header_title">
-        <p class="title" th:object="${userPlanBook}"><span th:text="*{book_name}">タイトルの編集</p>
+        <p class="title" th:object="${userPlanBook}"><span th:text="|*{book_name}の編集|"></p>
     </div>
 
     <div class="form-group">
