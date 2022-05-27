@@ -22,7 +22,6 @@ public class UserListController {
     public String userList(Model model) {
     	List<UserList> userList = userListService.userList();
     	model.addAttribute("userList", userList);
-    	System.out.println(userList);
         return "userList";
     }
 }
