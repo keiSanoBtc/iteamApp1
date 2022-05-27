@@ -55,7 +55,10 @@ public class UserController {
 		 User user = userService.userSearch(userSearchRequest);
 
 		 if (user == null) {
-			 return "index";
+			 List<String> errorList = new ArrayList<String>();
+			 errorList.add("ユーザーが登録されていません");
+			 model.addAttribute("validationError", errorList);
+			 return "userSearch";
 		 }
 
 		 List<Book> userPlanBookList = userService.userPlanBookList(userSearchRequest);
