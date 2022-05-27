@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class UserSearchRequest implements Serializable {
 
-  public String name;
+  private String name;
 
   public Long id;
 

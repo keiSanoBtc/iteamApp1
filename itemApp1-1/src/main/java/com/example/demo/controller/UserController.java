@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,12 +17,17 @@ import com.example.demo.dto.UserSearchRequest;
 import com.example.demo.entity.Book;
 import com.example.demo.entity.User;
 import com.example.demo.entity.UserPlanBook;
+import com.example.demo.form.Calcform;
 import com.example.demo.service.UserService;
 
 
 @Controller
 public class UserController {
 
+	@ModelAttribute
+	public Calcform setUpForm() {
+		return new Calcform();
+	}
 	@Autowired
 	UserService userService;
 
@@ -30,14 +36,20 @@ public class UserController {
 	 public String index(Model model) {
 		 return "index";
 	 }
+
+
+
 	 @RequestMapping(value="/userSearch", method=RequestMethod.GET)
-	 public String userSearch(@Validated Model model) {
+	 public String userSearch(){
 		 return "userSearch";
 	 }
 
 //	 利用者ごとのページを表示
 	 @RequestMapping(value = "/user", method = RequestMethod.POST)
-	 public String userSearch(@ModelAttribute UserSearchRequest userSearchRequest, Model model){
+	 public String userSearch(@Validated Calcform form, @ModelAttribute UserSearchRequest userSearchRequest, BindingResult bindingresult, Model model){
+		 if(bindingresult.hasErrors()) {
+			 return "userSearch";
+		 }
 		 User user = userService.userSearch(userSearchRequest);
 		 List<Book> userPlanBookList = userService.userPlanBookList(userSearchRequest);
 		 List<Book> userPastBookList = userService.userPastBookList(userSearchRequest);

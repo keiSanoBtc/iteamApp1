@@ -28,12 +28,15 @@
             <button type="button" class="btn col btn-outline-success" id="back_to_index" onclick="location.href='index'">ホームに戻る</button>
         </div>
         <div id="userSearch_wrapper" class="form-group">
-            <form th:action="@{/user}" th:object="${userSearchRequest}"
-                th:method="post">
+
+            <form th:action="@{/user}" th:object="${Calcform}" method="post">
+            <ul th:if="${fields.hasErrors('*')}">
+            	<li th:each="err:${#fields.errors('*)}" th:text="${err}"></li></li>
+            </ul>
                 <table>
                     <tr>
                         <th><label>名前：</label></th>
-                        <td><input type="text" class="form-control" name="name" /></td>
+						<td><input type="text" class="form-control" th:field="*{name}"/></td>
                         <td><input type="submit" class="btn btn-outline-success" value="検索" /></td>
                     </tr>
                 </table>
