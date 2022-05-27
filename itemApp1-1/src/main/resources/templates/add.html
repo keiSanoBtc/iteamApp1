@@ -15,18 +15,43 @@
    <!-- header -->
     <header>
         <div class="header_wrapper">
-            <img src="https://bigtreecapital.sharepoint.com/_api/v2.1/sites/bigtreecapital.sharepoint.com,1d425791-f95e-4d1b-912b-ed50d30972b5,efe966ac-4c61-4ed7-9808-a8273285b53c/lists/54842f71-e357-4e66-9d30-2d4c5a788492/items/221a5c7a-9cbe-4a69-b427-79231d8ff4c8/driveItem/thumbnails/0/c2560x99999/content?preferNoRedirect=true&prefer=extendCacheMaxAge&clientType=modernWebPart" alt="topimg" class="header_image mw-100" onclick="location.href='index'">
+            <img src="./image/image.jfif" alt="topimg" class="header_image mw-100" onclick="location.href='index'">
             <p class="header_text text-light display-1">reading list</p>
         </div>
     </header>
-	<p>読みたい本リストに追加しました。</p>
-	<button class="btn btn-outline-success" id="back_to_index" onclick="location.href='index'">ホームに戻る</button>
-    <form th:action="@{/user}" th:object="${userSearchRequest}" th:method="post">
-    	<div>
-     		<input type="hidden" th:object="${user}" name="id" th:value="*{id}" />
-     		<input type="hidden" th:object="${user}" name="name" th:value="*{name}" />
-        <input type="submit" value="積読リストに戻る"  />
-    	</div>
-	</form>
+    <!-- header -->
+
+    <!-- main -->
+    <main>
+        <div class="title">
+            <p>読みたい本リストに追加しました。</p>
+        </div>
+
+        <!-- <button class="btn btn-outline-success" id="back_to_index" onclick="location.href='index'">ホームに戻る</button>
+        <form th:action="@{/user}" th:object="${userSearchRequest}" th:method="post">
+            <div>
+                <input type="hidden" th:object="${user}" name="id" th:value="*{id}" />
+                <input type="hidden" th:object="${user}" name="name" th:value="*{name}" />
+            <input type="submit" value="積読リストに戻る"  />
+            </div>
+        </form> -->
+
+        <div class="row btns_wrapper">
+            <button class="btn col btn-outline-success" id="delete_complete" onclick="location.href='index'">ホームに戻る</button>
+    
+            <form th:action="@{/user}" th:object="${userPlanBookRequestt}" th:method="post" class="col">
+                <div>
+                     <input type="hidden" th:object="${user}" name="id" th:value="*{id}" />
+                     <input type="hidden" th:object="${user}" name="name" th:value="*{name}" />
+                     <input type="submit" class="btn btn-outline-success tsundoku_back" value="積読リストに戻る"  />
+                </div>
+            </form>
+        </div>
+    </main>
+    <!-- main -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 </body>
 </html>
