@@ -23,6 +23,18 @@
 
     <!-- main -->
     <main>
+        <div class="row btns_wrapper">
+            <button class="btn col btn-outline-success" id="delete_complete" onclick="location.href='index'">ホームに戻る</button>
+    
+            <form th:action="@{/user}" th:object="${userPlanBookRequestt}" th:method="post" class="col">
+                <div>
+                     <input type="hidden" th:object="${user}" name="id" th:value="*{id}" />
+                     <input type="hidden" th:object="${user}" name="name" th:value="*{name}" />
+                     <input type="submit" class="btn btn-outline-success tsundoku_back" value="積読リストに戻る"  />
+                </div>
+            </form>
+        </div>
+        
         <div class="title">
             <p id="bookshelf_title">本棚</p>
         </div>
@@ -58,17 +70,6 @@
             </tbody>
         </table>
 
-        <div class="row btns_wrapper">
-            <button class="btn col btn-outline-success" id="delete_complete" onclick="location.href='index'">ホームに戻る</button>
-    
-            <form th:action="@{/user}" th:object="${userPlanBookRequestt}" th:method="post" class="col">
-                <div>
-                     <input type="hidden" th:object="${user}" name="id" th:value="*{id}" />
-                     <input type="hidden" th:object="${user}" name="name" th:value="*{name}" />
-                     <input type="submit" class="btn btn-outline-success tsundoku_back" value="積読リストに戻る"  />
-                </div>
-            </form>
-        </div>
     </main>
     <!-- main -->
 
