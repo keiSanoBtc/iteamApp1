@@ -28,6 +28,9 @@
             <button type="button" class="btn col btn-outline-success" id="back_to_index" onclick="location.href='index'">ホームに戻る</button>
         </div>
         <div id="userSearch_wrapper" class="form-group">
+        	<tr th:if="${validationError}" th:each="error : ${validationError}">
+            	<td style="color: red;" th:text="${error}"></td>
+        	</tr>
             <form th:action="@{/user}" th:object="${userSearchRequest}"
                 th:method="post">
                 <table>
