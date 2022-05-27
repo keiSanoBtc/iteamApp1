@@ -20,6 +20,7 @@ import com.example.demo.entity.Book;
 import com.example.demo.entity.User;
 import com.example.demo.entity.UserPlanBook;
 import com.example.demo.form.Calcform;
+import com.example.demo.service.BookService;
 import com.example.demo.service.UserService;
 
 
@@ -32,6 +33,10 @@ public class UserController {
 	}
 	@Autowired
 	UserService userService;
+
+	@Autowired
+	BookService bookService;
+
 
 //	 最初の画面
 	 @RequestMapping(value = "/index", method = RequestMethod.GET)
@@ -51,7 +56,7 @@ public class UserController {
 	 @RequestMapping(value = "/user", method = RequestMethod.POST)
 	 public String userSearch(@Validated @ModelAttribute UserSearchRequest userSearchRequest, BindingResult  result, Model model){
 
-		  if (result.hasErrors()) {
+		 if (result.hasErrors()){
 			  List<String> errorList = new ArrayList<String>();
 	          for (ObjectError error : result.getAllErrors()) {
 	        	  errorList.add(error.getDefaultMessage());
@@ -59,9 +64,7 @@ public class UserController {
 	          model.addAttribute("validationError", errorList);
 	          return "userSearch";
 	     }
-
 		 User user = userService.userSearch(userSearchRequest);
-
 		 if (user == null) {
 			 return "index";
 		 }
@@ -81,13 +84,33 @@ public class UserController {
 		 User user = userService.userDeleteSearch(userPlanBookRequest);
 		 model.addAttribute("userPlanBook", userPlanBook);
 		 model.addAttribute("user", user);
+		 model.addAttribute("userPlanBookEditRequest", new UserPlanBookEditRequest());
 		 return "edit";
 	    }
 
 
 //  読みたい本の編集完了
 	@RequestMapping(value = "/editComplete", method = RequestMethod.POST)
-	 public String editPlanBookComplete(@ModelAttribute UserPlanBookEditRequest userPlanBookEditRequest, Model model) {
+	 public String editPlanBookComplete(@Validated @ModelAttribute UserPlanBookEditRequest userPlanBookEditRequest, BindingResult result, Model model) {
+
+		if (result.hasErrors()){
+			System.out.println(userPlanBookEditRequest.user_id);
+			System.out.println(userPlanBookEditRequest.book_id);
+			  List<String> errorList = new ArrayList<String>();
+	          for (ObjectError error : result.getAllErrors()) {
+	        	  errorList.add(error.getDefaultMessage());
+	          }
+	          User user = userService.userEditSearch(userPlanBookEditRequest);
+	          UserPlanBook userplanbook = bookService.bookEditSearch(userPlanBookEditRequest);
+	          model.addAttribute("user", user);
+	          model.addAttribute("userPlanBook", userplanbook);
+	          System.out.println(userplanbook);
+	          model.addAttribute("validationError", errorList);
+	          model.addAttribute("userPlanBookEditRequest", new UserPlanBookEditRequest());
+	          return "edit";
+	     }
+		System.out.println("hello");
+
 		User user = userService.userEditSearch(userPlanBookEditRequest);
 		userService.userPlanBookEditComplete(userPlanBookEditRequest);
 		model.addAttribute("user", user);

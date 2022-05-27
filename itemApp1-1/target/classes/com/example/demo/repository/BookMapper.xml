@@ -17,4 +17,8 @@
     <select id="userSearch" resultType="com.example.demo.entity.User">
     	 SELECT USER_ID, USER_NAME FROM USER_TABLE WHERE USER_ID = #{user_id};
     </select>
+
+    <select id="bookEditSearch" resultType="com.example.demo.entity.UserPlanBook">
+    	 SELECT USER_ID, ID, BOOK_TITLE FROM BOOK_PLAN_TABLE WHERE ID = #{book_id};
+    </select>
 </mapper>

@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.BookUserEditRequest;
+import com.example.demo.dto.UserPlanBookEditRequest;
 import com.example.demo.dto.UserSearchRequest;
 import com.example.demo.entity.Book;
 import com.example.demo.entity.User;
+import com.example.demo.entity.UserPlanBook;
 import com.example.demo.repository.BookMapper;;
 
 @Service
@@ -38,6 +40,12 @@ public class BookService {
     public User userSearch(BookUserEditRequest bookUserEditRequest) {
 
     	return bookMapper.userSearch(bookUserEditRequest);
+
+    }
+
+    public UserPlanBook bookEditSearch(UserPlanBookEditRequest userPlanBookEditRequest) {
+
+    	return bookMapper.bookEditSearch(userPlanBookEditRequest);
 
     }
 

@@ -15,7 +15,7 @@
     <header>
         <div class="header_wrapper">
             <img src="./image/image.jfif" alt="topimg" class="header_image mw-100" onclick="location.href='index'">
-            <p class="header_text text-light display-1" th:object="${user}"><span th:text="|*{name}'s reading list|"></span></p>
+            <p class="header_text text-light display-1" th:object="${user}"><span th:text="|${name}'s reading list|"></span></p>
         </div>
     </header>
     <!-- header -->
@@ -31,8 +31,8 @@
 
         <form th:action="@{/user}" th:object="${userPlanBookRequestt}" th:method="post" class="col">
 	    	<div>
-	     		<input type="hidden" th:object="${user}" name="id" th:value="*{id}" />
-	     		<input type="hidden" th:object="${user}" name="name" th:value="*{name}" />
+	     		<input type="hidden" th:object="${user}" name="id" th:value="${id}" />
+	     		<input type="hidden" th:object="${user}" name="name" th:value="${name}" />
 	         	<input type="submit" class="btn btn-outline-success tsundoku_back" value="積読リストに戻る"  />
 	    	</div>
 		</form>

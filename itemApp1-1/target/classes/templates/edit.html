@@ -15,36 +15,39 @@
     <header>
         <div class="header_wrapper">
             <img src="./image/image.jfif" alt="topimg" class="header_image mw-100" onclick="location.href='index'">
-            <p class="header_text text-light display-1" th:object="${user}"><span th:text="|*{name}'s reading list|"></span></p>
+            <p class="header_text text-light display-1" th:object="${user}"><span th:text="|${name}'s reading list|"></span></p>
         </div>
     </header>
     <!-- header -->
-    
-    
+
+
     <!-- main -->
     <main>
     <!-- <h1 class="header_title" th:object="${userPlanBook}"><span th:text="*{book_name}"></span></h1> -->
 
 
     <div class="title header_title">
-        <p class="title" th:object="${userPlanBook}"><span th:text="|*{book_name}の編集|"></p>
+        <p class="title" th:object="${userPlanBook}"><span th:text="|${book_name}の編集|"></p>
     </div>
 
     <div class="form-group">
+    		<tr th:if="${validationError}" th:each="error : ${validationError}">
+            	<td style="color: red;" th:text="${error}"></td>
+        	</tr>
            <table>
                <tr>
-               		<th><label>新しい名前：</label></th>
+               		<th><label>新しいタイトル：</label></th>
                     <form th:action="@{/editComplete}" th:object="${userPlanBookEditRequest}" th:method="post">
-               			<td><input type="text" class="form-control" name="book_name" /></td>
-	           			<td><input type="hidden" th:object="${userPlanBook}" name="user_id" th:value="*{user_id}" /></td>
-	           			<td><input type="hidden" th:object="${userPlanBook}" name="book_id" th:value="*{book_id}" /></td>
-	           			<td><input type="hidden" th:object="${user}" name="id" th:value="*{id}" /></td>
-     			    	<td><input type="hidden" th:object="${user}" name="name" th:value="*{name}" /></td>
+               			<td><input type="text" class="form-control" th:field="*{book_name}" /></td>
+	           			<td><input type="hidden" th:object="${userPlanBook}" name="user_id" th:value="${user_id}" /></td>
+	           			<td><input type="hidden" th:object="${userPlanBook}" name="book_id" th:value="${book_id}" /></td>
+	           			<td><input type="hidden" th:object="${user}" name="id" th:value="${id}" /></td>
+     			    	<td><input type="hidden" th:object="${user}" name="name" th:value="${name}" /></td>
 	            		<td><input type="submit" class="btn btn-outline-success" value="編集完了" /></td>
 	            	</form>
 	           		<form th:action="@{/user}" th:object="${userPlanBookRequest}" th:method="post" class="col"></td>
-	     				<td><input type="hidden" th:object="${user}" name="id" th:value="*{id}" /></td>
-	     				<td><input type="hidden" th:object="${user}" name="name" th:value="*{name}" /></td>
+	     				<td><input type="hidden" th:object="${user}" name="id" th:value="${id}" /></td>
+	     				<td><input type="hidden" th:object="${user}" name="name" th:value="${name}" /></td>
 	         			<td><input type="submit" class="btn btn-outline-success" value="キャンセル"  /></td>
 		            </form>
 	    		</tr>
