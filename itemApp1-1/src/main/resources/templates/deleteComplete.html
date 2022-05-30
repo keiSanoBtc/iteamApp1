@@ -16,14 +16,16 @@
     <header>
         <div class="header_wrapper">
             <img src="./image/image.jfif" alt="topimg" class="header_image mw-100" onclick="location.href='index'">
-            <p class="header_text text-light display-1">reading list</p>
+            <p class="header_text text-light display-1" th:object="${user}"><span th:text="|*{name}'s reading list|"></span></p>
         </div>
     </header>
     <!-- header -->
 
     <!-- main -->
     <main>
-        <p>削除しました</p>
+        <div class="title">
+            <p>削除しました</p>
+        </div>
 
         <!-- <button class="btn" id="delete_complete" onclick="location.href='index'">ホームに戻る</button>
         <form th:action="@{/user}" th:object="${userPlanBookRequestt}" th:method="post">

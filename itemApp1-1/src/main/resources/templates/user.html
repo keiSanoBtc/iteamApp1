@@ -13,12 +13,10 @@
 </head>
 <body>
     <!-- header -->
-    <!-- <h1 class="header_title" th:object="${user}"><span th:text="*{name}"></span>の積読リスト</h1> -->
-
     <header>
         <div class="header_wrapper">
             <img src="./image/image.jfif" alt="topimg" class="header_image mw-100" onclick="location.href='index'">
-            <p class="header_text text-light display-1">reading list</p>
+            <p class="header_text text-light display-1" th:object="${user}"><span th:text="|*{name}'s reading list|"></span></p>
         </div>
     </header>
     <!-- header -->
