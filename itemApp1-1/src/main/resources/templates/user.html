@@ -118,7 +118,8 @@
                             	<th>タイトル</th>
                             	<th>編集</th>
                             	<th>未読</th>
-                            	<th>削除</th>
+                            	<th></th>
+                            	<!-- <th>削除</th> -->
                             </tr>
                         </thead>
                         <tbody>
@@ -142,7 +143,10 @@
         								        </div>
       								 	      </form>
 				            	      </td>
-      				            	<td>
+								<td>
+								</td>
+      				                <!--
+      				                <td>
       				                <form th:action="@{/delete}" th:object="${userPlanBookRequest}" th:method="post">
         								         <div>
         								        	  <input type="hidden" th:object="${user}" name="user_id" th:value="*{id}" />
@@ -150,7 +154,9 @@
         								            <input type="submit" class="btn btn-outline-success" value="削除"  />
         								        </div>
       								 	      </form>
-				            	      </td>
+      								 </td>
+      								 -->
+
 				                   </tr>
                         </tbody>
                     </table>
