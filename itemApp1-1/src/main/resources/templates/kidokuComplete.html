@@ -30,7 +30,7 @@
         <button class="btn col btn-outline-success" id="delete_complete" onclick="location.href='index'">ホームに戻る</button>
 		<button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userMidokuList'">みんなの読みたい本</button>
         <button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userKidokuList'">みんなの読んだ本</button>
-        <form th:action="@{/user}" th:object="${userPlanBookRequestt}" th:method="post" class="col">
+        <form th:action="@{/user}" th:object="${userPlanBookRequestt}" th:method="post" class="col" autocomplete="off">
 	    	<div>
 	     		<input type="hidden" th:object="${user}" name="id" th:value="*{id}" />
 	     		<input type="hidden" th:object="${user}" name="name" th:value="*{name}" />
