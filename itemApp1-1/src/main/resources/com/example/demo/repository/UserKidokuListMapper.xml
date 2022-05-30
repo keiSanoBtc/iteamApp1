@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.repository.UserKidokuListMapper">
     <select id="userKidokuList" resultType="com.example.demo.entity.UserKidokuList">
-	SELECT DISTINCT a.USER_NAME, C.BOOK_TITLE
+	SELECT DISTINCT a.USER_NAME, c.BOOK_TITLE
 	FROM (USER_TABLE a INNER JOIN BOOK_PLAN_TABLE b ON b.USER_ID = a.USER_ID)
 	INNER JOIN BOOK_TABLE c ON b.BOOK_ID = c.BOOK_ID
 	WHERE b.READ_FLAG = 1
