@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
+    <title>userList</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
     <link rel="resetsheet" href="./reset.css">
+    <link rel="stylesheet" href="./userList.css">
 </head>
 <body>
     <!-- header -->
@@ -23,11 +24,30 @@
     <!-- main -->
     <main>
         <div class="row btns_wrapper">
-            <button type="button" class="btn col btn-outline-success" id="btn_userSearch" onclick="location.href='userSearch'">ユーザー名から検索する</button>
+            <button type="button" class="btn col btn-outline-success" id="btn_userSearch" onclick="location.href='userSearch'">ユーザー検索</button>
+            <button type="button" class="btn col btn-outline-success" id="btn_index" onclick="location.href='index'">ホームに戻る</button>
             <button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userList'">ユーザ一覧を見る</button>
-            <button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userMidokuList'">積読情報を見る</button>
-            <button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userKidokuList'">既読情報を見る</button>
+                        <button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userKidokuList'">既読情報を見る</button>
         </div>
+
+        <div class="title">
+            <p>積読本情報一覧</p>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ユーザー名</th>
+                    <th>積読本</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="user : ${userMidokuList}" th:object="${userMidokuList}">
+                    <td th:text="${user.userName}"></td>
+                    <td th:text="${user.midokuBookTitle}"></td>
+                </tr>
+            </tbody>
+        </table>
 
     </main>
     <!-- main -->

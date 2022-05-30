@@ -24,4 +24,5 @@ public class UserListController {
     	model.addAttribute("userList", userList);
         return "userList";
     }
+
 }

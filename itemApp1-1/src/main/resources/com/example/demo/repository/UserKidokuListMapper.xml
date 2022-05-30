@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.repository.UserKidokuListMapper">
+    <select id="userKidokuList" resultType="com.example.demo.entity.UserKidokuList">
+	SELECT DISTINCT a.USER_NAME, C.BOOK_TITLE
+	FROM (USER_TABLE a INNER JOIN BOOK_PLAN_TABLE b ON b.USER_ID = a.USER_ID)
+	INNER JOIN BOOK_TABLE c ON b.BOOK_ID = c.BOOK_ID
+	WHERE b.READ_FLAG = 1
+	ORDER BY a.USER_NAME;
+    </select>
+</mapper>
