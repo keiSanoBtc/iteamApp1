@@ -43,8 +43,8 @@
 
     <div class="row btns_wrapper">
         <button class="btn col btn-outline-success" id="delete_complete" onclick="location.href='index'">ホームに戻る</button>
-        <button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userMidokuList'">積読情報を見る</button>
-        <button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userKidokuList'">既読情報を見る</button>
+        <button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userMidokuList'">みんなの読みたい本</button>
+        <button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userKidokuList'">みんなの読んだ本</button>
         <form th:action="@{/user}" th:object="${userPlanBookRequestt}" th:method="post" class="col">
 	    	<div>
 	     		<input type="hidden" th:object="${user}" name="id" th:value="*{id}" />
