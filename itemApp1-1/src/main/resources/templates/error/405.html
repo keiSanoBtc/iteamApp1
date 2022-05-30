@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
     <link rel="resetsheet" href="./reset.css">
+    <link rel="stylesheet" href="./error.css">
     <link rel="shortcut icon" href="./icons/favicon.ico">
 </head>
 <body>
@@ -23,10 +24,19 @@
 
     <!-- main -->
     <main>
+        <!-- btns_wrapper -->
+        <div class="btns_wrapper row">
+            <button id="btn_userSearch" class="btn col btn-outline-success" onclick="location.href='userSearch'">ユーザー検索</button>
+            <button id="btn_index" class="btn col btn-outline-success" onclick="location.href='index'">ホームに戻る</button>
+            <button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userMidokuList'">みんなの読みたい本</button>
+            <button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userKidokuList'">みんなの読んだ本</button>
+        </div>
+    <!-- btns_wrapper -->
+
         <div class="title">
             <img src="./image/n.jpg" alt="">
-            <p>METHOD NOT ALLOWED</p>
-            <p>申し訳ございません。ご指定のページへのアクセスは許可されていません。</p>
+            <p class="en_text">METHOD NOT ALLOWED</p>
+            <p class="ja text">申し訳ございません。ご指定のページへのアクセスは許可されていません。</p>
         </div>
     </main>
     <!-- main -->

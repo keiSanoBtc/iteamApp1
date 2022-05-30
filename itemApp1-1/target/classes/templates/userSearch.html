@@ -27,8 +27,8 @@
         <div class="row btns_wrapper">
         	<button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userList'">利用者一覧を見る</button>
             <button type="button" class="btn col btn-outline-success" id="back_to_index" onclick="location.href='index'">ホームに戻る</button>
-                        <button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userMidokuList'">積読情報を見る</button>
-            <button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userKidokuList'">既読情報を見る</button>
+                        <button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userMidokuList'">みんなの読みたい本</button>
+            <button type="button" class="btn col btn-outline-success" id="btn_userList" onclick="location.href='userKidokuList'">みんなの読んだ本</button>
         </div>
         <div id="userSearch_wrapper" class="form-group">
         	<tr th:if="${validationError}" th:each="error : ${validationError}">
