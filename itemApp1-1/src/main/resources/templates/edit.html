@@ -20,8 +20,8 @@
         </div>
     </header>
     <!-- header -->
-    
-    
+
+
     <!-- main -->
     <main>
     <!-- <h1 class="header_title" th:object="${userPlanBook}"><span th:text="*{book_name}"></span></h1> -->
@@ -33,6 +33,9 @@
 
     <div class="form-group">
            <table>
+           	   <tr th:if="${validationError}" th:each="error : ${validationError}">
+               		<td style="color: red;" th:text="${error}"></td>
+        	   </tr>
                <tr>
                		<th><label>新しい名前：</label></th>
                     <form th:action="@{/editComplete}" th:object="${userPlanBookEditRequest}" th:method="post">

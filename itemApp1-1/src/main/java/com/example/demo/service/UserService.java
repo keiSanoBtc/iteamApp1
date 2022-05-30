@@ -63,4 +63,8 @@ public class UserService {
     public User userEditSearch(UserPlanBookEditRequest userPlanBookEditRequest) {
     	return userMapper.userEditSearch(userPlanBookEditRequest);
     }
+
+    public UserPlanBook userPlanBookSearch(UserPlanBookEditRequest userPlanBookEditRequest) {
+    	return userMapper.userPlanBookSearch(userPlanBookEditRequest);
+    }
 }

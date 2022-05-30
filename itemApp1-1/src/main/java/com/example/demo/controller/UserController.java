@@ -41,9 +41,9 @@ public class UserController {
 
 //	 利用者ごとのページを表示
 	 @RequestMapping(value = "/user", method = RequestMethod.POST)
-	 public String userSearch(@Validated @ModelAttribute UserSearchRequest userSearchRequest, BindingResult  result, Model model){
+	 public String userSearch(@Validated @ModelAttribute UserSearchRequest userSearchRequest, BindingResult result, Model model){
 
-		  if (result.hasErrors()) {
+		 if (result.hasErrors()) {
 			  List<String> errorList = new ArrayList<String>();
 	          for (ObjectError error : result.getAllErrors()) {
 	        	  errorList.add(error.getDefaultMessage());
@@ -82,7 +82,21 @@ public class UserController {
 
 //  読みたい本の編集完了
 	@RequestMapping(value = "/editComplete", method = RequestMethod.POST)
-	 public String editPlanBookComplete(@ModelAttribute UserPlanBookEditRequest userPlanBookEditRequest, Model model) {
+	 public String editPlanBookComplete(@Validated @ModelAttribute UserPlanBookEditRequest userPlanBookEditRequest, BindingResult result, Model model) {
+
+		if (result.hasErrors()) {
+			  List<String> errorList = new ArrayList<String>();
+	          for (ObjectError error : result.getAllErrors()) {
+	        	  errorList.add(error.getDefaultMessage());
+	          }
+	          User user = userService.userEditSearch(userPlanBookEditRequest);
+	          UserPlanBook userPlanBook = userService.userPlanBookSearch(userPlanBookEditRequest);
+	          model.addAttribute("user", user);
+	          model.addAttribute("userPlanBook", userPlanBook);
+	          model.addAttribute("validationError", errorList);
+	          return "edit";
+	     }
+
 		User user = userService.userEditSearch(userPlanBookEditRequest);
 		userService.userPlanBookEditComplete(userPlanBookEditRequest);
 		model.addAttribute("user", user);
