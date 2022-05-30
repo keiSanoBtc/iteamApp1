@@ -29,6 +29,8 @@ public interface UserMapper {
 
     UserPlanBook userPlanBookEdit(UserPlanBookRequest user);
 
+    UserPlanBook userPlanBookSearch(UserPlanBookEditRequest user);
+
     void userPlanBookEditComplete(UserPlanBookEditRequest user);
 
     void deletePlanBook(UserPlanBookRequest user);
