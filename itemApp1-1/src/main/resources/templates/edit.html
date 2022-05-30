@@ -46,7 +46,7 @@
      			    	<td><input type="hidden" th:object="${user}" name="name" th:value="*{name}" /></td>
 	            		<td><input type="submit" class="btn btn-outline-success" value="編集完了" /></td>
 	            	</form>
-	           		<form th:action="@{/user}" th:object="${userPlanBookRequest}" th:method="post" class="col"></td>
+	           		<form th:action="@{/user}" th:object="${userPlanBookRequest}" th:method="post" class="col" autocomplete="off"></td>
 	     				<td><input type="hidden" th:object="${user}" name="id" th:value="*{id}" /></td>
 	     				<td><input type="hidden" th:object="${user}" name="name" th:value="*{name}" /></td>
 	         			<td><input type="submit" class="btn btn-outline-success" value="キャンセル"  /></td>
