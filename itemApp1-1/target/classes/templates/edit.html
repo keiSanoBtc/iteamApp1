@@ -38,7 +38,7 @@
         	   </tr>
                <tr>
                		<th><label>新しい名前：</label></th>
-                    <form th:action="@{/editComplete}" th:object="${userPlanBookEditRequest}" th:method="post">
+                    <form th:action="@{/editComplete}" th:object="${userPlanBookEditRequest}" th:method="post" autocomplete="off">
                			<td><input type="text" class="form-control" name="book_name" /></td>
 	           			<td><input type="hidden" th:object="${userPlanBook}" name="user_id" th:value="*{user_id}" /></td>
 	           			<td><input type="hidden" th:object="${userPlanBook}" name="book_id" th:value="*{book_id}" /></td>
